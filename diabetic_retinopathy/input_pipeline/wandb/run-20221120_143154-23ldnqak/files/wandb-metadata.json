@@ -1,0 +1,22 @@
+{
+    "os": "macOS-13.0.1-arm64-arm-64bit",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-11-20T13:31:54.910510",
+    "startedAt": "2022-11-20T13:31:54.132430",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/test.py",
+    "codePath": "diabetic_retinopathy/input_pipeline/test.py",
+    "git": {
+        "remote": "https://github.tik.uni-stuttgart.de/iss/dl-lab-22w-team06.git",
+        "commit": "3a2ec26669ca8f9fea1ac8711fe2d7867518fd04"
+    },
+    "email": "st174258@stud.uni-stuttgart.de",
+    "root": "/Users/rocker/dl-lab-22w-team06",
+    "host": "RockerdeMacBook-Pro.local",
+    "username": "rocker",
+    "executable": "/Users/rocker/miniforge3/envs/dl-lab-22w-team06/bin/python"
+}

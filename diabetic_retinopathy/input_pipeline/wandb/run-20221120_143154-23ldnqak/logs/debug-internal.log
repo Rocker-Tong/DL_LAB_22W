@@ -1,0 +1,146 @@
+2022-11-20 14:31:54,188 INFO    StreamThr :6703 [internal.py:wandb_internal():88] W&B internal server running at pid: 6703, started at: 2022-11-20 14:31:54.187081
+2022-11-20 14:31:54,199 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: status
+2022-11-20 14:31:54,200 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: status
+2022-11-20 14:31:54,201 DEBUG   SenderThread:6703 [sender.py:send():303] send: header
+2022-11-20 14:31:54,201 DEBUG   SenderThread:6703 [sender.py:send():303] send: run
+2022-11-20 14:31:54,201 INFO    WriterThread:6703 [datastore.py:open_for_write():75] open: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/run-23ldnqak.wandb
+2022-11-20 14:31:54,711 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: check_version
+2022-11-20 14:31:54,716 INFO    SenderThread:6703 [dir_watcher.py:__init__():216] watching files in: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files
+2022-11-20 14:31:54,716 INFO    SenderThread:6703 [sender.py:_start_run_threads():928] run started: 23ldnqak with start time 1668951114.14104
+2022-11-20 14:31:54,716 DEBUG   SenderThread:6703 [sender.py:send():303] send: summary
+2022-11-20 14:31:54,716 INFO    SenderThread:6703 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-20 14:31:54,716 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: check_version
+2022-11-20 14:31:54,908 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: run_start
+2022-11-20 14:31:54,910 DEBUG   HandlerThread:6703 [meta.py:__init__():34] meta init
+2022-11-20 14:31:54,910 DEBUG   HandlerThread:6703 [meta.py:__init__():49] meta init done
+2022-11-20 14:31:54,910 DEBUG   HandlerThread:6703 [meta.py:probe():215] probe
+2022-11-20 14:31:54,914 DEBUG   HandlerThread:6703 [meta.py:_setup_git():205] setup git
+2022-11-20 14:31:54,935 DEBUG   HandlerThread:6703 [meta.py:_setup_git():212] setup git done
+2022-11-20 14:31:54,936 DEBUG   HandlerThread:6703 [meta.py:_save_pip():53] save pip
+2022-11-20 14:31:54,937 DEBUG   HandlerThread:6703 [meta.py:_save_pip():67] save pip done
+2022-11-20 14:31:54,937 DEBUG   HandlerThread:6703 [meta.py:_save_conda():74] save conda
+2022-11-20 14:31:55,724 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/requirements.txt
+2022-11-20 14:31:55,725 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/wandb-summary.json
+2022-11-20 14:31:55,725 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/conda-environment.yaml
+2022-11-20 14:31:57,512 DEBUG   HandlerThread:6703 [meta.py:_save_conda():84] save conda done
+2022-11-20 14:31:57,512 DEBUG   HandlerThread:6703 [meta.py:probe():253] probe done
+2022-11-20 14:31:57,553 DEBUG   SenderThread:6703 [sender.py:send():303] send: telemetry
+2022-11-20 14:31:57,553 DEBUG   SenderThread:6703 [sender.py:send():303] send: files
+2022-11-20 14:31:57,553 INFO    SenderThread:6703 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-11-20 14:31:57,558 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: stop_status
+2022-11-20 14:31:57,558 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: stop_status
+2022-11-20 14:31:57,721 DEBUG   SenderThread:6703 [sender.py:send():303] send: telemetry
+2022-11-20 14:31:57,727 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/conda-environment.yaml
+2022-11-20 14:31:57,727 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/wandb-metadata.json
+2022-11-20 14:31:57,867 DEBUG   SenderThread:6703 [sender.py:send():303] send: exit
+2022-11-20 14:31:57,867 INFO    SenderThread:6703 [sender.py:send_exit():442] handling exit code: 0
+2022-11-20 14:31:57,868 INFO    SenderThread:6703 [sender.py:send_exit():444] handling runtime: 2
+2022-11-20 14:31:57,868 INFO    SenderThread:6703 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-20 14:31:57,868 INFO    SenderThread:6703 [sender.py:send_exit():450] send defer
+2022-11-20 14:31:57,868 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:57,868 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 0
+2022-11-20 14:31:57,868 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:57,868 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-11-20 14:31:57,868 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 1
+2022-11-20 14:31:57,868 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:57,869 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 1
+2022-11-20 14:31:58,451 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:58,451 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-11-20 14:31:58,451 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 2
+2022-11-20 14:31:58,451 DEBUG   SenderThread:6703 [sender.py:send():303] send: stats
+2022-11-20 14:31:58,451 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:58,451 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 2
+2022-11-20 14:31:58,451 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:58,452 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-11-20 14:31:58,452 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 3
+2022-11-20 14:31:58,452 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:58,452 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 3
+2022-11-20 14:31:58,452 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:58,452 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-11-20 14:31:58,452 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 4
+2022-11-20 14:31:58,452 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:58,452 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 4
+2022-11-20 14:31:58,452 DEBUG   SenderThread:6703 [sender.py:send():303] send: summary
+2022-11-20 14:31:58,452 INFO    SenderThread:6703 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-20 14:31:58,453 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:58,453 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-11-20 14:31:58,453 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 5
+2022-11-20 14:31:58,453 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:58,453 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 5
+2022-11-20 14:31:58,453 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:58,453 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-11-20 14:31:58,526 INFO    Thread-23 :6703 [upload_job.py:push():143] Uploaded file /var/folders/b5/t7l_lrfd02l7d8_1f754tz0h0000gn/T/tmppoyx19smwandb/2df7g85t-wandb-metadata.json
+2022-11-20 14:31:58,715 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 6
+2022-11-20 14:31:58,715 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:58,715 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 6
+2022-11-20 14:31:58,715 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:58,716 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-11-20 14:31:58,732 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/config.yaml
+2022-11-20 14:31:58,732 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/wandb-summary.json
+2022-11-20 14:31:58,733 INFO    Thread-19 :6703 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/output.log
+2022-11-20 14:31:58,869 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: poll_exit
+2022-11-20 14:31:59,934 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 7
+2022-11-20 14:31:59,934 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: poll_exit
+2022-11-20 14:31:59,934 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:31:59,934 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 7
+2022-11-20 14:31:59,934 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:31:59,934 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-11-20 14:31:59,935 INFO    SenderThread:6703 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-11-20 14:32:00,745 INFO    SenderThread:6703 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/output.log
+2022-11-20 14:32:00,746 INFO    SenderThread:6703 [dir_watcher.py:finish():392] scan: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files
+2022-11-20 14:32:00,746 INFO    SenderThread:6703 [dir_watcher.py:finish():406] scan save: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/requirements.txt requirements.txt
+2022-11-20 14:32:00,746 INFO    SenderThread:6703 [dir_watcher.py:finish():406] scan save: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/output.log output.log
+2022-11-20 14:32:00,754 INFO    SenderThread:6703 [dir_watcher.py:finish():406] scan save: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/config.yaml config.yaml
+2022-11-20 14:32:00,759 INFO    SenderThread:6703 [dir_watcher.py:finish():406] scan save: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/wandb-summary.json wandb-summary.json
+2022-11-20 14:32:00,759 INFO    SenderThread:6703 [dir_watcher.py:finish():406] scan save: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/conda-environment.yaml conda-environment.yaml
+2022-11-20 14:32:00,760 INFO    SenderThread:6703 [dir_watcher.py:finish():406] scan save: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/wandb-metadata.json wandb-metadata.json
+2022-11-20 14:32:00,761 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 8
+2022-11-20 14:32:00,767 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:32:00,767 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 8
+2022-11-20 14:32:00,768 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:32:00,768 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-11-20 14:32:00,768 INFO    SenderThread:6703 [file_pusher.py:finish():168] shutting down file pusher
+2022-11-20 14:32:01,685 INFO    Thread-26 :6703 [upload_job.py:push():143] Uploaded file /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/config.yaml
+2022-11-20 14:32:01,687 INFO    Thread-25 :6703 [upload_job.py:push():143] Uploaded file /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/output.log
+2022-11-20 14:32:01,703 INFO    Thread-27 :6703 [upload_job.py:push():143] Uploaded file /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/wandb-summary.json
+2022-11-20 14:32:01,707 INFO    Thread-24 :6703 [upload_job.py:push():143] Uploaded file /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/requirements.txt
+2022-11-20 14:32:01,733 INFO    Thread-28 :6703 [upload_job.py:push():143] Uploaded file /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/files/conda-environment.yaml
+2022-11-20 14:32:01,937 INFO    Thread-18 :6703 [sender.py:transition_state():463] send defer: 9
+2022-11-20 14:32:01,938 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:32:01,938 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 9
+2022-11-20 14:32:01,939 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:32:01,939 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-11-20 14:32:01,939 INFO    SenderThread:6703 [file_pusher.py:join():173] waiting for file pusher
+2022-11-20 14:32:01,939 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 10
+2022-11-20 14:32:01,940 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:32:01,940 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 10
+2022-11-20 14:32:01,940 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:32:01,940 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-11-20 14:32:02,410 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 11
+2022-11-20 14:32:02,411 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:32:02,411 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 11
+2022-11-20 14:32:02,411 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:32:02,411 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-11-20 14:32:02,411 INFO    SenderThread:6703 [sender.py:transition_state():463] send defer: 12
+2022-11-20 14:32:02,411 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: defer
+2022-11-20 14:32:02,412 INFO    HandlerThread:6703 [handler.py:handle_request_defer():161] handle defer: 12
+2022-11-20 14:32:02,412 DEBUG   SenderThread:6703 [sender.py:send():303] send: final
+2022-11-20 14:32:02,412 DEBUG   SenderThread:6703 [sender.py:send():303] send: footer
+2022-11-20 14:32:02,412 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: defer
+2022-11-20 14:32:02,412 INFO    SenderThread:6703 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-11-20 14:32:02,413 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: poll_exit
+2022-11-20 14:32:02,413 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: server_info
+2022-11-20 14:32:02,413 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: get_summary
+2022-11-20 14:32:02,413 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: poll_exit
+2022-11-20 14:32:02,413 DEBUG   SenderThread:6703 [sender.py:send_request():317] send_request: server_info
+2022-11-20 14:32:02,416 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: sampled_history
+2022-11-20 14:32:02,744 INFO    MainThread:6703 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-11-20 14:32:02,744 INFO    MainThread:6703 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-11-20 14:32:02,744 INFO    MainThread:6703 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2022-11-20 14:32:02,744 DEBUG   HandlerThread:6703 [handler.py:handle_request():138] handle_request: shutdown
+2022-11-20 14:32:02,744 INFO    HandlerThread:6703 [handler.py:finish():814] shutting down handler
+2022-11-20 14:32:03,417 INFO    WriterThread:6703 [datastore.py:close():279] close: /Users/rocker/dl-lab-22w-team06/diabetic_retinopathy/input_pipeline/wandb/run-20221120_143154-23ldnqak/run-23ldnqak.wandb
+2022-11-20 14:32:03,749 INFO    SenderThread:6703 [sender.py:finish():1331] shutting down sender
+2022-11-20 14:32:03,749 INFO    SenderThread:6703 [file_pusher.py:finish():168] shutting down file pusher
+2022-11-20 14:32:03,749 INFO    SenderThread:6703 [file_pusher.py:join():173] waiting for file pusher
+2022-11-20 14:32:04,731 INFO    MainThread:6703 [internal.py:handle_exit():78] Internal process exited

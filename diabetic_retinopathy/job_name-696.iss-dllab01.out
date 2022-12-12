@@ -1,0 +1,1461 @@
+2022-12-09 16:50:23.119485: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-12-09 16:50:23.716288: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64:/usr/local/cuda-11.2/extras/CUPTI/lib64
+2022-12-09 16:50:23.716343: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64:/usr/local/cuda-11.2/extras/CUPTI/lib64
+2022-12-09 16:50:23.716349: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+/usr/local/lib/python3.8/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.5
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+2022-12-09 16:50:25.474841: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:25.480295: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:25.481139: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I1209 16:50:25.485183 140661183817536 datasets.py:17] Preparing dataset IDRID...
+I1209 16:50:25.485352 140661183817536 datasets.py:26] The TFRecord files are not existed, creating new files...
+I1209 16:50:25.665261 140661183817536 TFRecord.py:95] The training dataset is resampled.
+I1209 16:50:25.668657 140661183817536 TFRecord.py:169] Creating TFRecord file to ~/train.tfrecords now...
+2022-12-09 16:50:25.669531: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-12-09 16:50:25.670144: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:25.671019: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:25.671790: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:26.157893: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:26.158760: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:26.159546: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-12-09 16:50:26.160317: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9635 MB memory:  -> device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:21:00.0, compute capability: 7.5
+I1209 16:50:42.985000 140661183817536 TFRecord.py:183] A new TFRecord file is created.
+I1209 16:50:42.985207 140661183817536 TFRecord.py:169] Creating TFRecord file to ~/test.tfrecords now...
+I1209 16:50:46.315948 140661183817536 TFRecord.py:183] A new TFRecord file is created.
+I1209 16:50:46.316239 140661183817536 TFRecord.py:169] Creating TFRecord file to ~/val.tfrecords now...
+I1209 16:50:50.594108 140661183817536 TFRecord.py:183] A new TFRecord file is created.
+WARNING:tensorflow:From /usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/pyct/static_analysis/liveness.py:83: Analyzer.lamba_check (from tensorflow.python.autograph.pyct.static_analysis.liveness) is deprecated and will be removed after 2023-09-23.
+Instructions for updating:
+Lambda fuctions will be no more assumed to be used in the statement where they are used, or at least in the same block. https://github.com/tensorflow/tensorflow/issues/56089
+W1209 16:50:51.001958 140661183817536 deprecation.py:350] From /usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/pyct/static_analysis/liveness.py:83: Analyzer.lamba_check (from tensorflow.python.autograph.pyct.static_analysis.liveness) is deprecated and will be removed after 2023-09-23.
+Instructions for updating:
+Lambda fuctions will be no more assumed to be used in the statement where they are used, or at least in the same block. https://github.com/tensorflow/tensorflow/issues/56089
+I1209 16:50:51.321828 140661183817536 datasets.py:109] Preparing the datasets...
+I1209 16:50:51.326913 140661183817536 datasets.py:120] Train set is prepared
+I1209 16:50:51.327247 140661183817536 datasets.py:127] Validation set is prepared
+I1209 16:50:51.327548 140661183817536 datasets.py:134] Test set is prepared
+I1209 16:50:51.570385 140661183817536 main.py:41] The Resnet model is loaded successfully.
+I1209 16:50:51.570533 140661183817536 main.py:44] Start the training process...
+I1209 16:50:51.582285 140661183817536 train.py:68] <PrefetchDataset element_spec=(TensorSpec(shape=(None, 256, 256, 3), dtype=tf.float32, name=None), TensorSpec(shape=(None,), dtype=tf.int64, name=None))>
+I1209 16:50:51.582349 140661183817536 train.py:69] Starting
+I1209 16:50:51.582380 140661183817536 train.py:73] 
+Start of epoch 1
+683
+683
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 256, 256, 64)      1792      
+                                                                 
+ batch_normalization (BatchN  (None, 256, 256, 64)     256       
+ ormalization)                                                   
+                                                                 
+ dropout (Dropout)           (None, 256, 256, 64)      0         
+                                                                 
+ conv2d_1 (Conv2D)           (None, 256, 256, 64)      36928     
+                                                                 
+ batch_normalization_1 (Batc  (None, 256, 256, 64)     256       
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 128, 128, 64)     0         
+ )                                                               
+                                                                 
+ conv2d_2 (Conv2D)           (None, 128, 128, 128)     73856     
+                                                                 
+ batch_normalization_2 (Batc  (None, 128, 128, 128)    512       
+ hNormalization)                                                 
+                                                                 
+ dropout_1 (Dropout)         (None, 128, 128, 128)     0         
+                                                                 
+ conv2d_3 (Conv2D)           (None, 128, 128, 128)     147584    
+                                                                 
+ batch_normalization_3 (Batc  (None, 128, 128, 128)    512       
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 64, 64, 128)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_4 (Conv2D)           (None, 64, 64, 256)       295168    
+                                                                 
+ batch_normalization_4 (Batc  (None, 64, 64, 256)      1024      
+ hNormalization)                                                 
+                                                                 
+ dropout_2 (Dropout)         (None, 64, 64, 256)       0         
+                                                                 
+ conv2d_5 (Conv2D)           (None, 64, 64, 256)       590080    
+                                                                 
+ batch_normalization_5 (Batc  (None, 64, 64, 256)      1024      
+ hNormalization)                                                 
+                                                                 
+ dropout_3 (Dropout)         (None, 64, 64, 256)       0         
+                                                                 
+ conv2d_6 (Conv2D)           (None, 64, 64, 256)       590080    
+                                                                 
+ batch_normalization_6 (Batc  (None, 64, 64, 256)      1024      
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d_2 (MaxPooling  (None, 32, 32, 256)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_7 (Conv2D)           (None, 32, 32, 512)       1180160   
+                                                                 
+ batch_normalization_7 (Batc  (None, 32, 32, 512)      2048      
+ hNormalization)                                                 
+                                                                 
+ dropout_4 (Dropout)         (None, 32, 32, 512)       0         
+                                                                 
+ conv2d_8 (Conv2D)           (None, 32, 32, 512)       2359808   
+                                                                 
+ batch_normalization_8 (Batc  (None, 32, 32, 512)      2048      
+ hNormalization)                                                 
+                                                                 
+ dropout_5 (Dropout)         (None, 32, 32, 512)       0         
+                                                                 
+ conv2d_9 (Conv2D)           (None, 32, 32, 512)       2359808   
+                                                                 
+ batch_normalization_9 (Batc  (None, 32, 32, 512)      2048      
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d_3 (MaxPooling  (None, 16, 16, 512)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_10 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ batch_normalization_10 (Bat  (None, 16, 16, 512)      2048      
+ chNormalization)                                                
+                                                                 
+ dropout_6 (Dropout)         (None, 16, 16, 512)       0         
+                                                                 
+ conv2d_11 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ batch_normalization_11 (Bat  (None, 16, 16, 512)      2048      
+ chNormalization)                                                
+                                                                 
+ dropout_7 (Dropout)         (None, 16, 16, 512)       0         
+                                                                 
+ conv2d_12 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ batch_normalization_12 (Bat  (None, 16, 16, 512)      2048      
+ chNormalization)                                                
+                                                                 
+ max_pooling2d_4 (MaxPooling  (None, 8, 8, 512)        0         
+ 2D)                                                             
+                                                                 
+ dropout_8 (Dropout)         (None, 8, 8, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 32768)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              134221824 
+                                                                 
+ batch_normalization_13 (Bat  (None, 4096)             16384     
+ chNormalization)                                                
+                                                                 
+ flatten_1 (Flatten)         (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ batch_normalization_14 (Bat  (None, 4096)             16384     
+ chNormalization)                                                
+                                                                 
+ flatten_2 (Flatten)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 1000)              4097000   
+                                                                 
+ batch_normalization_15 (Bat  (None, 1000)             4000      
+ chNormalization)                                                
+                                                                 
+ dropout_9 (Dropout)         (None, 1000)              0         
+                                                                 
+ dense_3 (Dense)             (None, 1)                 1001      
+                                                                 
+=================================================================
+Total params: 169,869,489
+Trainable params: 169,842,657
+Non-trainable params: 26,832
+_________________________________________________________________
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 256, 256, 64)      1792      
+                                                                 
+ batch_normalization (BatchN  (None, 256, 256, 64)     256       
+ ormalization)                                                   
+                                                                 
+ dropout (Dropout)           (None, 256, 256, 64)      0         
+                                                                 
+ conv2d_1 (Conv2D)           (None, 256, 256, 64)      36928     
+                                                                 
+ batch_normalization_1 (Batc  (None, 256, 256, 64)     256       
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 128, 128, 64)     0         
+ )                                                               
+                                                                 
+ conv2d_2 (Conv2D)           (None, 128, 128, 128)     73856     
+                                                                 
+ batch_normalization_2 (Batc  (None, 128, 128, 128)    512       
+ hNormalization)                                                 
+                                                                 
+ dropout_1 (Dropout)         (None, 128, 128, 128)     0         
+                                                                 
+ conv2d_3 (Conv2D)           (None, 128, 128, 128)     147584    
+                                                                 
+ batch_normalization_3 (Batc  (None, 128, 128, 128)    512       
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 64, 64, 128)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_4 (Conv2D)           (None, 64, 64, 256)       295168    
+                                                                 
+ batch_normalization_4 (Batc  (None, 64, 64, 256)      1024      
+ hNormalization)                                                 
+                                                                 
+ dropout_2 (Dropout)         (None, 64, 64, 256)       0         
+                                                                 
+ conv2d_5 (Conv2D)           (None, 64, 64, 256)       590080    
+                                                                 
+ batch_normalization_5 (Batc  (None, 64, 64, 256)      1024      
+ hNormalization)                                                 
+                                                                 
+ dropout_3 (Dropout)         (None, 64, 64, 256)       0         
+                                                                 
+ conv2d_6 (Conv2D)           (None, 64, 64, 256)       590080    
+                                                                 
+ batch_normalization_6 (Batc  (None, 64, 64, 256)      1024      
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d_2 (MaxPooling  (None, 32, 32, 256)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_7 (Conv2D)           (None, 32, 32, 512)       1180160   
+                                                                 
+ batch_normalization_7 (Batc  (None, 32, 32, 512)      2048      
+ hNormalization)                                                 
+                                                                 
+ dropout_4 (Dropout)         (None, 32, 32, 512)       0         
+                                                                 
+ conv2d_8 (Conv2D)           (None, 32, 32, 512)       2359808   
+                                                                 
+ batch_normalization_8 (Batc  (None, 32, 32, 512)      2048      
+ hNormalization)                                                 
+                                                                 
+ dropout_5 (Dropout)         (None, 32, 32, 512)       0         
+                                                                 
+ conv2d_9 (Conv2D)           (None, 32, 32, 512)       2359808   
+                                                                 
+ batch_normalization_9 (Batc  (None, 32, 32, 512)      2048      
+ hNormalization)                                                 
+                                                                 
+ max_pooling2d_3 (MaxPooling  (None, 16, 16, 512)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_10 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ batch_normalization_10 (Bat  (None, 16, 16, 512)      2048      
+ chNormalization)                                                
+                                                                 
+ dropout_6 (Dropout)         (None, 16, 16, 512)       0         
+                                                                 
+ conv2d_11 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ batch_normalization_11 (Bat  (None, 16, 16, 512)      2048      
+ chNormalization)                                                
+                                                                 
+ dropout_7 (Dropout)         (None, 16, 16, 512)       0         
+                                                                 
+ conv2d_12 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ batch_normalization_12 (Bat  (None, 16, 16, 512)      2048      
+ chNormalization)                                                
+                                                                 
+ max_pooling2d_4 (MaxPooling  (None, 8, 8, 512)        0         
+ 2D)                                                             
+                                                                 
+ dropout_8 (Dropout)         (None, 8, 8, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 32768)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              134221824 
+                                                                 
+ batch_normalization_13 (Bat  (None, 4096)             16384     
+ chNormalization)                                                
+                                                                 
+ flatten_1 (Flatten)         (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ batch_normalization_14 (Bat  (None, 4096)             16384     
+ chNormalization)                                                
+                                                                 
+ flatten_2 (Flatten)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 1000)              4097000   
+                                                                 
+ batch_normalization_15 (Bat  (None, 1000)             4000      
+ chNormalization)                                                
+                                                                 
+ dropout_9 (Dropout)         (None, 1000)              0         
+                                                                 
+ dense_3 (Dense)             (None, 1)                 1001      
+                                                                 
+=================================================================
+Total params: 169,869,489
+Trainable params: 169,842,657
+Non-trainable params: 26,832
+_________________________________________________________________
+2022-12-09 16:50:55.713396: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:954] layout failed: INVALID_ARGUMENT: Size of values 0 does not match size of permutation 4 @ fanin shape invgg16/sequential/dropout/dropout/SelectV2-2-TransposeNHWCToNCHW-LayoutOptimizer
+2022-12-09 16:50:56.533911: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:428] Loaded cuDNN version 8201
+2022-12-09 16:50:58.963810: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x7fe9497a1fc0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-12-09 16:50:58.963855: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
+2022-12-09 16:50:58.967340: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2022-12-09 16:50:59.069979: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2022-12-09 16:51:01.745940: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.17GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:01.745997: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.17GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:01.781671: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.40GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:01.781686: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.40GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:02.805722: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.14GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:02.805788: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.14GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:02.844696: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.59GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:02.844712: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.59GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:03.527218: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 5.05GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:03.527285: W tensorflow/tsl/framework/bfc_allocator.cc:290] Allocator (GPU_0_bfc) ran out of memory trying to allocate 5.05GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2022-12-09 16:51:05.223379: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:954] layout failed: INVALID_ARGUMENT: Size of values 0 does not match size of permutation 4 @ fanin shape invgg16/sequential/dropout/dropout/SelectV2-2-TransposeNHWCToNCHW-LayoutOptimizer
+2022-12-09 16:51:13.908290: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:954] layout failed: INVALID_ARGUMENT: Size of values 0 does not match size of permutation 4 @ fanin shape invgg16/sequential/dropout/dropout/SelectV2-2-TransposeNHWCToNCHW-LayoutOptimizer
+I1209 16:52:26.301089 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 16:52:27.231582 140661183817536 train.py:102] Finished training after one epoch
+I1209 16:52:28.084107 140661183817536 train.py:116] epoch 1, Loss: 0.41098207235336304, Accuracy: 59.02930450439453%, Validation Loss: 1.0810718536376953, Validation Accuracy: 59.02930450439453%, Time taken: 96.50151324272156
+WARNING:tensorflow:From /usr/local/lib/python3.8/dist-packages/tensorflow/python/ops/summary_ops_v2.py:1332: start (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+use `tf.profiler.experimental.start` instead.
+W1209 16:52:28.084355 140661183817536 deprecation.py:350] From /usr/local/lib/python3.8/dist-packages/tensorflow/python/ops/summary_ops_v2.py:1332: start (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+use `tf.profiler.experimental.start` instead.
+2022-12-09 16:52:28.084523: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 16:52:28.084547: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 16:52:28.084581: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1664] Profiler found 1 GPUs
+WARNING:tensorflow:From /usr/local/lib/python3.8/dist-packages/tensorflow/python/ops/summary_ops_v2.py:1383: stop (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+use `tf.profiler.experimental.stop` instead.
+W1209 16:52:28.495355 140661183817536 deprecation.py:350] From /usr/local/lib/python3.8/dist-packages/tensorflow/python/ops/summary_ops_v2.py:1383: stop (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+use `tf.profiler.experimental.stop` instead.
+2022-12-09 16:52:28.495554: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 16:52:28.512136: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 16:52:28.562880: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 27 callback api events and 19 activity events. 
+2022-12-09 16:52:28.563716: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+WARNING:tensorflow:From /usr/local/lib/python3.8/dist-packages/tensorflow/python/ops/summary_ops_v2.py:1383: save (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+`tf.python.eager.profiler` has deprecated, use `tf.profiler` instead.
+W1209 16:52:28.564286 140661183817536 deprecation.py:350] From /usr/local/lib/python3.8/dist-packages/tensorflow/python/ops/summary_ops_v2.py:1383: save (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+`tf.python.eager.profiler` has deprecated, use `tf.profiler` instead.
+WARNING:tensorflow:From /usr/local/lib/python3.8/dist-packages/tensorflow/python/eager/profiler.py:150: maybe_create_event_file (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+`tf.python.eager.profiler` has deprecated, use `tf.profiler` instead.
+W1209 16:52:28.564761 140661183817536 deprecation.py:350] From /usr/local/lib/python3.8/dist-packages/tensorflow/python/eager/profiler.py:150: maybe_create_event_file (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+`tf.python.eager.profiler` has deprecated, use `tf.profiler` instead.
+I1209 16:52:28.568536 140661183817536 train.py:73] 
+Start of epoch 2
+I1209 16:53:47.427570 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 16:53:48.094256 140661183817536 train.py:102] Finished training after one epoch
+I1209 16:53:48.749472 140661183817536 train.py:116] epoch 2, Loss: 0.5711026191711426, Accuracy: 61.03825378417969%, Validation Loss: 1.721827745437622, Validation Accuracy: 61.03825378417969%, Time taken: 80.18071866035461
+2022-12-09 16:53:48.749659: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 16:53:48.749674: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 16:53:48.951033: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 16:53:48.971198: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 16:53:49.039574: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 16:53:49.040730: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 16:53:49.044535 140661183817536 train.py:73] 
+Start of epoch 3
+I1209 16:55:08.054423 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 16:55:08.709120 140661183817536 train.py:102] Finished training after one epoch
+I1209 16:55:09.510832 140661183817536 train.py:116] epoch 3, Loss: 1.474469542503357, Accuracy: 62.7777099609375%, Validation Loss: 1.9442038536071777, Validation Accuracy: 62.7777099609375%, Time taken: 80.46594882011414
+2022-12-09 16:55:09.511050: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 16:55:09.511067: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 16:55:09.713611: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 16:55:09.724445: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 16:55:09.786363: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 16:55:09.787235: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 16:55:09.790012 140661183817536 train.py:73] 
+Start of epoch 4
+I1209 16:56:28.712042 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 16:56:29.348548 140661183817536 train.py:102] Finished training after one epoch
+I1209 16:56:29.967787 140661183817536 train.py:116] epoch 4, Loss: 0.09764713048934937, Accuracy: 64.13195037841797%, Validation Loss: 1.435307502746582, Validation Accuracy: 64.13195037841797%, Time taken: 80.17745184898376
+2022-12-09 16:56:29.968026: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 16:56:29.968043: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 16:56:30.162410: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 16:56:30.173989: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 16:56:30.227542: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 16:56:30.228682: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 16:56:30.236074 140661183817536 train.py:73] 
+Start of epoch 5
+I1209 16:57:49.149750 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 16:57:49.808389 140661183817536 train.py:102] Finished training after one epoch
+I1209 16:57:50.430235 140661183817536 train.py:116] epoch 5, Loss: 0.9431985020637512, Accuracy: 65.54151153564453%, Validation Loss: 0.595747172832489, Validation Accuracy: 65.54151153564453%, Time taken: 80.19384741783142
+2022-12-09 16:57:50.430455: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 16:57:50.430471: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 16:57:50.627231: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 16:57:50.637827: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 16:57:50.699733: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 16:57:50.700884: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 16:57:50.704837 140661183817536 train.py:73] 
+Start of epoch 6
+I1209 16:59:09.458765 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 16:59:10.187643 140661183817536 train.py:102] Finished training after one epoch
+I1209 16:59:10.856516 140661183817536 train.py:116] epoch 6, Loss: 1.8319015502929688, Accuracy: 66.70952606201172%, Validation Loss: 1.6499285697937012, Validation Accuracy: 66.70952606201172%, Time taken: 80.15132308006287
+2022-12-09 16:59:10.856671: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 16:59:10.856687: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 16:59:11.038764: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 16:59:11.053433: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 16:59:11.111566: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 16:59:11.112734: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 16:59:11.116904 140661183817536 train.py:73] 
+Start of epoch 7
+I1209 17:00:30.185174 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:00:30.883804 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:00:31.559396 140661183817536 train.py:116] epoch 7, Loss: 2.0242056846618652, Accuracy: 67.63997650146484%, Validation Loss: 2.821660041809082, Validation Accuracy: 67.63997650146484%, Time taken: 80.44212818145752
+2022-12-09 17:00:31.559626: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:00:31.559644: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:00:31.754645: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:00:31.769932: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:00:31.839538: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:00:31.840676: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:00:31.844383 140661183817536 train.py:73] 
+Start of epoch 8
+I1209 17:01:50.766760 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:01:51.454273 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:01:52.139917 140661183817536 train.py:116] epoch 8, Loss: 0.6422856450080872, Accuracy: 68.43791198730469%, Validation Loss: 5.435753345489502, Validation Accuracy: 68.43791198730469%, Time taken: 80.2952287197113
+2022-12-09 17:01:52.140148: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:01:52.140164: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:01:52.341970: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:01:52.352602: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:01:52.406311: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:01:52.407104: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:01:52.409752 140661183817536 train.py:73] 
+Start of epoch 9
+I1209 17:03:11.027644 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:03:11.749771 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:03:12.456089 140661183817536 train.py:116] epoch 9, Loss: 0.3823506236076355, Accuracy: 69.0082778930664%, Validation Loss: 4.0079827308654785, Validation Accuracy: 69.0082778930664%, Time taken: 80.04604506492615
+2022-12-09 17:03:12.456299: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:03:12.456316: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:03:12.647760: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:03:12.658269: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:03:12.727472: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:03:12.728579: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:03:12.731769 140661183817536 train.py:73] 
+Start of epoch 10
+I1209 17:04:31.515526 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:04:32.282343 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:04:32.987085 140661183817536 train.py:116] epoch 10, Loss: 0.21201053261756897, Accuracy: 69.56280517578125%, Validation Loss: 2.2130472660064697, Validation Accuracy: 69.56280517578125%, Time taken: 80.25499820709229
+2022-12-09 17:04:32.987320: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:04:32.987338: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:04:33.181437: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:04:33.192809: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:04:33.255492: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:04:33.256609: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:04:33.259914 140661183817536 train.py:73] 
+Start of epoch 11
+I1209 17:05:51.968928 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:05:52.687073 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:05:53.381400 140661183817536 train.py:116] epoch 11, Loss: 0.12584254145622253, Accuracy: 70.20510864257812%, Validation Loss: 5.480652332305908, Validation Accuracy: 70.20510864257812%, Time taken: 80.12115430831909
+2022-12-09 17:05:53.381591: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:05:53.381606: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:05:53.557485: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:05:53.568098: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:05:53.635516: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:05:53.636650: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:05:53.640038 140661183817536 train.py:73] 
+Start of epoch 12
+I1209 17:07:12.141263 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:07:12.889326 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:07:13.593118 140661183817536 train.py:116] epoch 12, Loss: 1.7144736051559448, Accuracy: 70.6789779663086%, Validation Loss: 6.290384769439697, Validation Accuracy: 70.6789779663086%, Time taken: 79.95273900032043
+2022-12-09 17:07:13.593337: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:07:13.593354: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:07:13.788929: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:07:13.799123: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:07:13.851802: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:07:13.853048: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:07:13.856794 140661183817536 train.py:73] 
+Start of epoch 13
+I1209 17:08:32.769754 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:08:33.482493 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:08:34.195131 140661183817536 train.py:116] epoch 13, Loss: 2.628685474395752, Accuracy: 71.1555404663086%, Validation Loss: 4.39390754699707, Validation Accuracy: 71.1555404663086%, Time taken: 80.33794140815735
+2022-12-09 17:08:34.195374: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:08:34.195393: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:08:34.393445: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:08:34.403084: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:08:34.455615: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:08:34.456707: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:08:34.460206 140661183817536 train.py:73] 
+Start of epoch 14
+I1209 17:09:53.388222 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:09:54.131874 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:09:54.849277 140661183817536 train.py:116] epoch 14, Loss: 0.1942158043384552, Accuracy: 71.49359130859375%, Validation Loss: 4.2770891189575195, Validation Accuracy: 71.49359130859375%, Time taken: 80.38873553276062
+2022-12-09 17:09:54.849495: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:09:54.849512: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:09:55.048948: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:09:55.058425: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:09:55.111230: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:09:55.112343: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:09:55.116188 140661183817536 train.py:73] 
+Start of epoch 15
+I1209 17:11:13.948070 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:11:14.704423 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:11:15.415338 140661183817536 train.py:116] epoch 15, Loss: 0.8661628365516663, Accuracy: 71.95113372802734%, Validation Loss: 6.781314373016357, Validation Accuracy: 71.95113372802734%, Time taken: 80.29877352714539
+2022-12-09 17:11:15.415591: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:11:15.415609: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:11:15.619418: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:11:15.629538: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:11:15.691360: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:11:15.692515: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:11:15.696441 140661183817536 train.py:73] 
+Start of epoch 16
+I1209 17:12:34.416100 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:12:35.158308 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:12:35.879772 140661183817536 train.py:116] epoch 16, Loss: 0.07421837002038956, Accuracy: 72.43639373779297%, Validation Loss: 4.110253810882568, Validation Accuracy: 72.43639373779297%, Time taken: 80.18299460411072
+2022-12-09 17:12:35.879960: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:12:35.879977: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:12:36.073194: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:12:36.083324: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:12:36.139609: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:12:36.140778: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:12:36.144501 140661183817536 train.py:73] 
+Start of epoch 17
+I1209 17:13:55.306788 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:13:56.109385 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:13:56.835481 140661183817536 train.py:116] epoch 17, Loss: 0.4284592270851135, Accuracy: 72.80658721923828%, Validation Loss: 5.804225921630859, Validation Accuracy: 72.80658721923828%, Time taken: 80.6905870437622
+2022-12-09 17:13:56.835707: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:13:56.835724: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:13:57.011768: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:13:57.025270: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:13:57.087684: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:13:57.088920: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:13:57.092792 140661183817536 train.py:73] 
+Start of epoch 18
+I1209 17:15:15.919024 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:15:16.636414 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:15:17.344657 140661183817536 train.py:116] epoch 18, Loss: 0.07075579464435577, Accuracy: 73.1505126953125%, Validation Loss: 0.7378492951393127, Validation Accuracy: 73.1505126953125%, Time taken: 80.25147819519043
+2022-12-09 17:15:17.344837: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:15:17.344852: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:15:17.533671: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:15:17.546826: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:15:17.606497: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:15:17.607520: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:15:17.610720 140661183817536 train.py:73] 
+Start of epoch 19
+I1209 17:16:36.668255 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:16:37.415824 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:16:38.155139 140661183817536 train.py:116] epoch 19, Loss: 0.4971191883087158, Accuracy: 73.56835174560547%, Validation Loss: 0.7672451734542847, Validation Accuracy: 73.56835174560547%, Time taken: 80.54411792755127
+2022-12-09 17:16:38.155296: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:16:38.155311: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:16:38.344434: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:16:38.355524: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:16:38.423017: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:16:38.424038: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:16:38.427538 140661183817536 train.py:73] 
+Start of epoch 20
+I1209 17:17:57.399997 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:17:58.133774 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:17:58.851426 140661183817536 train.py:116] epoch 20, Loss: 1.4891725778579712, Accuracy: 73.9058837890625%, Validation Loss: 2.2270169258117676, Validation Accuracy: 73.9058837890625%, Time taken: 80.42352676391602
+2022-12-09 17:17:58.851726: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:17:58.851747: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:17:59.030771: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:17:59.043653: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:17:59.107740: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:17:59.108927: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:17:59.113017 140661183817536 train.py:73] 
+Start of epoch 21
+I1209 17:19:18.108175 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:19:18.849090 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:19:19.555880 140661183817536 train.py:116] epoch 21, Loss: 0.43077313899993896, Accuracy: 74.24787139892578%, Validation Loss: 4.172551155090332, Validation Accuracy: 74.24787139892578%, Time taken: 80.44252276420593
+2022-12-09 17:19:19.556083: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:19:19.556100: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:19:19.741153: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:19:19.754081: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:19:19.811497: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:19:19.812632: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:19:19.816551 140661183817536 train.py:73] 
+Start of epoch 22
+I1209 17:20:38.634255 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:20:39.547464 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:20:40.433693 140661183817536 train.py:116] epoch 22, Loss: 0.8814291954040527, Accuracy: 74.66767120361328%, Validation Loss: 2.3291592597961426, Validation Accuracy: 74.66767120361328%, Time taken: 80.61679649353027
+2022-12-09 17:20:40.433917: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:20:40.433935: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:20:40.627022: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:20:40.637769: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:20:40.707829: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:20:40.709021: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:20:40.712269 140661183817536 train.py:73] 
+Start of epoch 23
+I1209 17:21:59.961906 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:22:00.888815 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:22:01.765299 140661183817536 train.py:116] epoch 23, Loss: 0.515134334564209, Accuracy: 74.9008560180664%, Validation Loss: 0.9671995639801025, Validation Accuracy: 74.9008560180664%, Time taken: 81.05268955230713
+2022-12-09 17:22:01.765521: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:22:01.765539: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:22:01.957131: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:22:01.966673: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:22:02.027191: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:22:02.028286: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:22:02.032258 140661183817536 train.py:73] 
+Start of epoch 24
+I1209 17:23:20.851041 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:23:21.749292 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:23:22.623938 140661183817536 train.py:116] epoch 24, Loss: 1.2123494148254395, Accuracy: 75.16748046875%, Validation Loss: 1.9057821035385132, Validation Accuracy: 75.16748046875%, Time taken: 80.59132409095764
+2022-12-09 17:23:22.624099: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:23:22.624115: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:23:22.821830: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:23:22.831752: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:23:22.899401: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:23:22.900519: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:23:22.903943 140661183817536 train.py:73] 
+Start of epoch 25
+I1209 17:24:41.387026 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:24:42.293013 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:24:43.169864 140661183817536 train.py:116] epoch 25, Loss: 0.727018415927887, Accuracy: 75.25824737548828%, Validation Loss: 2.6075539588928223, Validation Accuracy: 75.25824737548828%, Time taken: 80.26556825637817
+2022-12-09 17:24:43.170086: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:24:43.170104: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:24:43.354102: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:24:43.368827: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:24:43.435458: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:24:43.436686: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:24:43.440625 140661183817536 train.py:73] 
+Start of epoch 26
+I1209 17:26:01.936617 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:26:02.831556 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:26:03.711233 140661183817536 train.py:116] epoch 26, Loss: 0.6609359383583069, Accuracy: 75.53254699707031%, Validation Loss: 2.010324478149414, Validation Accuracy: 75.53254699707031%, Time taken: 80.27032327651978
+2022-12-09 17:26:03.711391: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:26:03.711406: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:26:03.912932: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:26:03.925589: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:26:03.995343: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:26:03.996448: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:26:03.999672 140661183817536 train.py:73] 
+Start of epoch 27
+I1209 17:27:23.266053 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:27:24.181101 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:27:25.064469 140661183817536 train.py:116] epoch 27, Loss: 1.5056860446929932, Accuracy: 75.80572509765625%, Validation Loss: 5.321776390075684, Validation Accuracy: 75.80572509765625%, Time taken: 81.06447958946228
+2022-12-09 17:27:25.064704: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:27:25.064723: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:27:25.247501: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:27:25.260982: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:27:25.323679: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:27:25.324847: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:27:25.328968 140661183817536 train.py:73] 
+Start of epoch 28
+I1209 17:28:44.201982 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:28:45.111929 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:28:45.992936 140661183817536 train.py:116] epoch 28, Loss: 2.5906872749328613, Accuracy: 75.93738555908203%, Validation Loss: 6.474881172180176, Validation Accuracy: 75.93738555908203%, Time taken: 80.66361021995544
+2022-12-09 17:28:45.993184: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:28:45.993200: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:28:46.183046: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:28:46.195174: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:28:46.271328: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:28:46.272422: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:28:46.276155 140661183817536 train.py:73] 
+Start of epoch 29
+I1209 17:30:05.908755 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:30:06.845008 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:30:07.765063 140661183817536 train.py:116] epoch 29, Loss: 1.8444783687591553, Accuracy: 75.92615509033203%, Validation Loss: 6.7784953117370605, Validation Accuracy: 75.92615509033203%, Time taken: 81.488529920578
+2022-12-09 17:30:07.765295: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:30:07.765313: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:30:07.974682: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:30:07.986007: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:30:08.055341: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:30:08.056450: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:30:08.060495 140661183817536 train.py:73] 
+Start of epoch 30
+I1209 17:31:26.919004 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:31:27.858136 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:31:28.774363 140661183817536 train.py:116] epoch 30, Loss: 0.08104253560304642, Accuracy: 76.04441833496094%, Validation Loss: 6.779040336608887, Validation Accuracy: 76.04441833496094%, Time taken: 80.71350169181824
+2022-12-09 17:31:28.774583: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:31:28.774602: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:31:28.981424: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:31:28.994527: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:31:29.067640: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:31:29.068884: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:31:29.075742 140661183817536 train.py:73] 
+Start of epoch 31
+I1209 17:32:48.186887 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:32:49.090714 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:32:50.008964 140661183817536 train.py:116] epoch 31, Loss: 2.440730094909668, Accuracy: 76.19772338867188%, Validation Loss: 6.4837646484375, Validation Accuracy: 76.19772338867188%, Time taken: 80.93281173706055
+2022-12-09 17:32:50.009184: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:32:50.009203: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:32:50.224453: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:32:50.234112: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:32:50.303766: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:32:50.305054: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:32:50.309955 140661183817536 train.py:73] 
+Start of epoch 32
+I1209 17:34:08.987444 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:34:09.941067 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:34:10.876016 140661183817536 train.py:116] epoch 32, Loss: 1.5440292358398438, Accuracy: 76.29339599609375%, Validation Loss: 4.15226936340332, Validation Accuracy: 76.29339599609375%, Time taken: 80.56567025184631
+2022-12-09 17:34:10.876227: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:34:10.876243: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:34:11.089135: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:34:11.102030: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:34:11.167515: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:34:11.168637: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:34:11.172982 140661183817536 train.py:73] 
+Start of epoch 33
+I1209 17:35:31.332164 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:35:32.288800 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:35:33.233396 140661183817536 train.py:116] epoch 33, Loss: 0.3070630431175232, Accuracy: 76.28952026367188%, Validation Loss: 6.779697895050049, Validation Accuracy: 76.28952026367188%, Time taken: 82.059983253479
+2022-12-09 17:35:33.233715: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:35:33.233740: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:35:33.428591: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:35:33.440923: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:35:33.511508: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:35:33.512605: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:35:33.516107 140661183817536 train.py:73] 
+Start of epoch 34
+I1209 17:36:53.618280 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:36:54.561741 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:36:55.487802 140661183817536 train.py:116] epoch 34, Loss: 0.6593362092971802, Accuracy: 76.38475036621094%, Validation Loss: 0.4940108060836792, Validation Accuracy: 76.38475036621094%, Time taken: 81.9713487625122
+2022-12-09 17:36:55.488059: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:36:55.488077: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:36:55.693151: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:36:55.705876: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:36:55.779519: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:36:55.780648: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:36:55.784263 140661183817536 train.py:73] 
+Start of epoch 35
+I1209 17:38:14.927133 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:38:15.876223 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:38:16.804459 140661183817536 train.py:116] epoch 35, Loss: 1.2016654014587402, Accuracy: 76.5460433959961%, Validation Loss: 1.2540000677108765, Validation Accuracy: 76.5460433959961%, Time taken: 81.01980924606323
+2022-12-09 17:38:16.804625: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:38:16.804639: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:38:17.005031: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:38:17.016449: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:38:17.079600: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:38:17.080723: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:38:17.083952 140661183817536 train.py:73] 
+Start of epoch 36
+I1209 17:39:36.218671 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:39:37.148496 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:39:38.062265 140661183817536 train.py:116] epoch 36, Loss: 1.2527552843093872, Accuracy: 76.72220611572266%, Validation Loss: 1.4230589866638184, Validation Accuracy: 76.72220611572266%, Time taken: 80.97801113128662
+2022-12-09 17:39:38.062467: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:39:38.062484: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:39:38.274586: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:39:38.291129: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:39:38.355434: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:39:38.356562: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:39:38.360675 140661183817536 train.py:73] 
+Start of epoch 37
+I1209 17:40:57.357586 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:40:58.310111 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:40:59.231991 140661183817536 train.py:116] epoch 37, Loss: 0.17379018664360046, Accuracy: 76.82215881347656%, Validation Loss: 0.3705348074436188, Validation Accuracy: 76.82215881347656%, Time taken: 80.87095165252686
+2022-12-09 17:40:59.232213: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:40:59.232230: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:40:59.444743: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:40:59.462451: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:40:59.531449: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:40:59.532564: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:40:59.536163 140661183817536 train.py:73] 
+Start of epoch 38
+I1209 17:42:18.189951 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:42:19.167794 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:42:20.100710 140661183817536 train.py:116] epoch 38, Loss: 1.9629334211349487, Accuracy: 76.89002990722656%, Validation Loss: 1.5133789777755737, Validation Accuracy: 76.89002990722656%, Time taken: 80.56420803070068
+2022-12-09 17:42:20.100938: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:42:20.100956: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:42:20.308304: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:42:20.318006: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:42:20.375564: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:42:20.376669: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:42:20.380610 140661183817536 train.py:73] 
+Start of epoch 39
+I1209 17:43:39.121660 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:43:40.084418 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:43:41.020173 140661183817536 train.py:116] epoch 39, Loss: 1.215691328048706, Accuracy: 76.97643280029297%, Validation Loss: 0.9579058885574341, Validation Accuracy: 76.97643280029297%, Time taken: 80.63923025131226
+2022-12-09 17:43:41.020425: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:43:41.020445: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:43:41.231396: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:43:41.245799: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:43:41.311679: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:43:41.312771: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:43:41.316854 140661183817536 train.py:73] 
+Start of epoch 40
+I1209 17:45:00.405069 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:45:01.326144 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:45:02.247596 140661183817536 train.py:116] epoch 40, Loss: 1.7153465747833252, Accuracy: 77.13314056396484%, Validation Loss: 0.34460362792015076, Validation Accuracy: 77.13314056396484%, Time taken: 80.93030261993408
+2022-12-09 17:45:02.247822: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:45:02.247845: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:45:02.462647: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:45:02.472542: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:45:02.539466: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:45:02.540569: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:45:02.544512 140661183817536 train.py:73] 
+Start of epoch 41
+I1209 17:46:21.279624 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:46:22.240627 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:46:23.170014 140661183817536 train.py:116] epoch 41, Loss: 0.41056883335113525, Accuracy: 77.25778198242188%, Validation Loss: 3.3525590896606445, Validation Accuracy: 77.25778198242188%, Time taken: 80.62514734268188
+2022-12-09 17:46:23.170243: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:46:23.170259: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:46:23.368927: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:46:23.381789: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:46:23.447421: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:46:23.448509: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:46:23.452948 140661183817536 train.py:73] 
+Start of epoch 42
+I1209 17:47:42.604375 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:47:43.796281 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:47:44.720932 140661183817536 train.py:116] epoch 42, Loss: 0.059826262295246124, Accuracy: 77.41139221191406%, Validation Loss: 1.1036152839660645, Validation Accuracy: 77.41139221191406%, Time taken: 81.26762747764587
+2022-12-09 17:47:44.721098: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:47:44.721113: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:47:44.936270: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:47:44.948685: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:47:45.023428: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:47:45.024521: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:47:45.028434 140661183817536 train.py:73] 
+Start of epoch 43
+I1209 17:49:04.161520 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:49:05.121897 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:49:06.026303 140661183817536 train.py:116] epoch 43, Loss: 0.1575358659029007, Accuracy: 77.35538482666016%, Validation Loss: 1.5734604597091675, Validation Accuracy: 77.35538482666016%, Time taken: 80.99751615524292
+2022-12-09 17:49:06.026470: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:49:06.026486: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:49:06.245615: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:49:06.256126: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:49:06.327674: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:49:06.328880: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:49:06.333612 140661183817536 train.py:73] 
+Start of epoch 44
+I1209 17:50:25.317805 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:50:26.277249 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:50:27.213272 140661183817536 train.py:116] epoch 44, Loss: 0.40433841943740845, Accuracy: 77.49369049072266%, Validation Loss: 4.243432998657227, Validation Accuracy: 77.49369049072266%, Time taken: 80.87927889823914
+2022-12-09 17:50:27.213431: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:50:27.213447: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:50:27.424549: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:50:27.439933: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:50:27.507267: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:50:27.508391: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:50:27.512655 140661183817536 train.py:73] 
+Start of epoch 45
+I1209 17:51:46.479782 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:51:47.427829 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:51:48.354600 140661183817536 train.py:116] epoch 45, Loss: 1.8868293762207031, Accuracy: 77.66796112060547%, Validation Loss: 1.044449806213379, Validation Accuracy: 77.66796112060547%, Time taken: 80.84155130386353
+2022-12-09 17:51:48.354814: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:51:48.354830: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:51:48.554748: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:51:48.566346: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:51:48.634565: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:51:48.635666: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:51:48.639602 140661183817536 train.py:73] 
+Start of epoch 46
+I1209 17:53:07.252395 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:53:08.201502 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:53:09.139925 140661183817536 train.py:116] epoch 46, Loss: 1.4466825723648071, Accuracy: 77.79733276367188%, Validation Loss: 0.7438482642173767, Validation Accuracy: 77.79733276367188%, Time taken: 80.49994373321533
+2022-12-09 17:53:09.140234: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:53:09.140257: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:53:09.363567: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:53:09.374370: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:53:09.438763: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:53:09.439681: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:53:09.443204 140661183817536 train.py:73] 
+Start of epoch 47
+I1209 17:54:28.551788 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:54:29.599660 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:54:30.640604 140661183817536 train.py:116] epoch 47, Loss: 0.3049639165401459, Accuracy: 77.98016357421875%, Validation Loss: 0.5718777179718018, Validation Accuracy: 77.98016357421875%, Time taken: 81.19659495353699
+2022-12-09 17:54:30.641148: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:54:30.641209: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:54:30.838323: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:54:30.854477: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:54:30.931778: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:54:30.933129: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:54:30.937238 140661183817536 train.py:73] 
+Start of epoch 48
+I1209 17:55:49.759601 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:55:50.671766 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:55:51.586367 140661183817536 train.py:116] epoch 48, Loss: 0.679350733757019, Accuracy: 78.15945434570312%, Validation Loss: 3.62850022315979, Validation Accuracy: 78.15945434570312%, Time taken: 80.64881467819214
+2022-12-09 17:55:51.586636: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:55:51.586658: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:55:51.778570: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:55:51.792864: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:55:51.851538: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:55:51.852725: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:55:51.856665 140661183817536 train.py:73] 
+Start of epoch 49
+I1209 17:57:10.621713 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:57:11.531733 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:57:12.408310 140661183817536 train.py:116] epoch 49, Loss: 0.016846470534801483, Accuracy: 78.33909606933594%, Validation Loss: 2.1466474533081055, Validation Accuracy: 78.33909606933594%, Time taken: 80.55128407478333
+2022-12-09 17:57:12.408485: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:57:12.408500: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:57:12.598694: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:57:12.608655: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:57:12.671677: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:57:12.672985: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:57:12.677497 140661183817536 train.py:73] 
+Start of epoch 50
+I1209 17:58:31.157933 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:58:32.068606 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:58:32.928968 140661183817536 train.py:116] epoch 50, Loss: 0.01004693191498518, Accuracy: 78.50045776367188%, Validation Loss: 4.297240734100342, Validation Accuracy: 78.50045776367188%, Time taken: 80.25106763839722
+2022-12-09 17:58:32.929187: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:58:32.929204: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:58:33.110787: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:58:33.125799: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:58:33.187946: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:58:33.189279: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:58:33.193197 140661183817536 train.py:73] 
+Start of epoch 51
+I1209 17:59:52.039598 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 17:59:53.070278 140661183817536 train.py:102] Finished training after one epoch
+I1209 17:59:54.014123 140661183817536 train.py:116] epoch 51, Loss: 1.348240852355957, Accuracy: 78.67652893066406%, Validation Loss: 1.7119183540344238, Validation Accuracy: 78.67652893066406%, Time taken: 80.82053732872009
+2022-12-09 17:59:54.014375: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 17:59:54.014407: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 17:59:54.209401: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 17:59:54.219329: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 17:59:54.295758: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 17:59:54.297084: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 17:59:54.301302 140661183817536 train.py:73] 
+Start of epoch 52
+I1209 18:01:13.199936 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:01:14.115566 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:01:15.005436 140661183817536 train.py:116] epoch 52, Loss: 0.3818860948085785, Accuracy: 78.85303497314453%, Validation Loss: 2.657001495361328, Validation Accuracy: 78.85303497314453%, Time taken: 80.70375967025757
+2022-12-09 18:01:15.005665: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:01:15.005683: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:01:15.192855: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:01:15.204532: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:01:15.271567: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:01:15.272671: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:01:15.275983 140661183817536 train.py:73] 
+Start of epoch 53
+I1209 18:02:34.084588 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:02:34.990063 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:02:35.894482 140661183817536 train.py:116] epoch 53, Loss: 0.5638216733932495, Accuracy: 79.05829620361328%, Validation Loss: 3.129718780517578, Validation Accuracy: 79.05829620361328%, Time taken: 80.61820340156555
+2022-12-09 18:02:35.894702: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:02:35.894719: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:02:36.092107: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:02:36.102022: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:02:36.159580: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:02:36.160737: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:02:36.165094 140661183817536 train.py:73] 
+Start of epoch 54
+I1209 18:03:55.024810 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:03:55.931579 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:03:56.820106 140661183817536 train.py:116] epoch 54, Loss: 1.4991276264190674, Accuracy: 79.23509216308594%, Validation Loss: 2.5463509559631348, Validation Accuracy: 79.23509216308594%, Time taken: 80.65467309951782
+2022-12-09 18:03:56.820266: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:03:56.820280: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:03:57.008267: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:03:57.022289: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:03:57.091142: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:03:57.092241: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:03:57.096409 140661183817536 train.py:73] 
+Start of epoch 55
+I1209 18:05:16.019669 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:05:16.931784 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:05:17.843348 140661183817536 train.py:116] epoch 55, Loss: 0.9423744678497314, Accuracy: 79.43958282470703%, Validation Loss: 1.4066139459609985, Validation Accuracy: 79.43958282470703%, Time taken: 80.74654507637024
+2022-12-09 18:05:17.843643: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:05:17.843666: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:05:18.026600: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:05:18.038814: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:05:18.115440: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:05:18.116568: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:05:18.120301 140661183817536 train.py:73] 
+Start of epoch 56
+I1209 18:06:36.837516 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:06:37.740222 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:06:38.637480 140661183817536 train.py:116] epoch 56, Loss: 0.3118970990180969, Accuracy: 79.62335968017578%, Validation Loss: 2.228524684906006, Validation Accuracy: 79.62335968017578%, Time taken: 80.51687550544739
+2022-12-09 18:06:38.637671: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:06:38.637692: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:06:38.822700: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:06:38.837460: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:06:38.903369: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:06:38.904475: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:06:38.908154 140661183817536 train.py:73] 
+Start of epoch 57
+I1209 18:07:57.956572 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:07:58.850735 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:07:59.739440 140661183817536 train.py:116] epoch 57, Loss: 1.808082103729248, Accuracy: 79.75521850585938%, Validation Loss: 1.6791305541992188, Validation Accuracy: 79.75521850585938%, Time taken: 80.83100485801697
+2022-12-09 18:07:59.739631: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:07:59.739647: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:07:59.934155: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:07:59.945035: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:08:00.008118: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:08:00.009475: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:08:00.013766 140661183817536 train.py:73] 
+Start of epoch 58
+I1209 18:09:18.641457 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:09:19.542123 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:09:20.408876 140661183817536 train.py:116] epoch 58, Loss: 1.6591624021530151, Accuracy: 79.82304382324219%, Validation Loss: 2.98513126373291, Validation Accuracy: 79.82304382324219%, Time taken: 80.39471960067749
+2022-12-09 18:09:20.409051: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:09:20.409067: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:09:20.598007: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:09:20.609500: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:09:20.679889: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:09:20.681095: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:09:20.685517 140661183817536 train.py:73] 
+Start of epoch 59
+I1209 18:10:39.317186 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:10:40.218037 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:10:41.074055 140661183817536 train.py:116] epoch 59, Loss: 0.5222923755645752, Accuracy: 79.9049301147461%, Validation Loss: 2.3815698623657227, Validation Accuracy: 79.9049301147461%, Time taken: 80.38824462890625
+2022-12-09 18:10:41.074242: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:10:41.074258: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:10:41.261374: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:10:41.271914: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:10:41.339434: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:10:41.340582: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:10:41.343955 140661183817536 train.py:73] 
+Start of epoch 60
+I1209 18:11:59.615550 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:12:00.557170 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:12:01.455642 140661183817536 train.py:116] epoch 60, Loss: 0.08727259188890457, Accuracy: 79.97068786621094%, Validation Loss: 6.7995805740356445, Validation Accuracy: 79.97068786621094%, Time taken: 80.11135578155518
+2022-12-09 18:12:01.455863: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:12:01.455880: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:12:01.642740: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:12:01.654300: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:12:01.715896: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:12:01.717037: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:12:01.720220 140661183817536 train.py:73] 
+Start of epoch 61
+I1209 18:13:19.643171 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:13:20.660006 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:13:21.615099 140661183817536 train.py:116] epoch 61, Loss: 0.3022289276123047, Accuracy: 80.07647705078125%, Validation Loss: 6.829358100891113, Validation Accuracy: 80.07647705078125%, Time taken: 79.89456486701965
+2022-12-09 18:13:21.615319: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:13:21.615339: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:13:21.797396: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:13:21.809822: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:13:21.879551: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:13:21.880953: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:13:21.885534 140661183817536 train.py:73] 
+Start of epoch 62
+I1209 18:14:40.563586 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:14:41.481779 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:14:42.374308 140661183817536 train.py:116] epoch 62, Loss: 0.5521698594093323, Accuracy: 80.21575164794922%, Validation Loss: 7.073703765869141, Validation Accuracy: 80.21575164794922%, Time taken: 80.48842406272888
+2022-12-09 18:14:42.374565: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:14:42.374584: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:14:42.562220: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:14:42.576328: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:14:42.643526: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:14:42.644701: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:14:42.648091 140661183817536 train.py:73] 
+Start of epoch 63
+I1209 18:16:01.079635 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:16:01.998834 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:16:02.898468 140661183817536 train.py:116] epoch 63, Loss: 0.11249224096536636, Accuracy: 80.34351348876953%, Validation Loss: 1.965751051902771, Validation Accuracy: 80.34351348876953%, Time taken: 80.25006294250488
+2022-12-09 18:16:02.898638: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:16:02.898654: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:16:03.095170: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:16:03.105746: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:16:03.167475: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:16:03.168621: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:16:03.172510 140661183817536 train.py:73] 
+Start of epoch 64
+I1209 18:17:21.668862 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:17:22.572892 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:17:23.454083 140661183817536 train.py:116] epoch 64, Loss: 1.3571486473083496, Accuracy: 80.47146606445312%, Validation Loss: 4.9810051918029785, Validation Accuracy: 80.47146606445312%, Time taken: 80.28118896484375
+2022-12-09 18:17:23.454298: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:17:23.454314: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:17:23.639000: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:17:23.650301: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:17:23.719477: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:17:23.720639: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:17:23.725150 140661183817536 train.py:73] 
+Start of epoch 65
+I1209 18:18:42.175820 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:18:43.093331 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:18:43.984493 140661183817536 train.py:116] epoch 65, Loss: 1.3242733478546143, Accuracy: 80.55204010009766%, Validation Loss: 3.782883882522583, Validation Accuracy: 80.55204010009766%, Time taken: 80.25894927978516
+2022-12-09 18:18:43.984649: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:18:43.984664: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:18:44.169863: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:18:44.184707: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:18:44.247608: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:18:44.248862: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:18:44.252851 140661183817536 train.py:73] 
+Start of epoch 66
+I1209 18:20:02.777060 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:20:03.665089 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:20:04.549404 140661183817536 train.py:116] epoch 66, Loss: 1.0953954458236694, Accuracy: 80.66429138183594%, Validation Loss: 2.610853672027588, Validation Accuracy: 80.66429138183594%, Time taken: 80.29615902900696
+2022-12-09 18:20:04.549645: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:20:04.549663: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:20:04.740371: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:20:04.753250: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:20:04.819977: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:20:04.821121: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:20:04.825463 140661183817536 train.py:73] 
+Start of epoch 67
+I1209 18:21:22.999899 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:21:23.943427 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:21:24.844223 140661183817536 train.py:116] epoch 67, Loss: 2.022775411605835, Accuracy: 80.77986145019531%, Validation Loss: 3.9473812580108643, Validation Accuracy: 80.77986145019531%, Time taken: 80.01847314834595
+2022-12-09 18:21:24.844409: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:21:24.844426: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:21:25.024238: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:21:25.038208: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:21:25.107306: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:21:25.108458: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:21:25.111990 140661183817536 train.py:73] 
+Start of epoch 68
+I1209 18:22:44.241014 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:22:45.121570 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:22:46.017928 140661183817536 train.py:116] epoch 68, Loss: 0.5641459822654724, Accuracy: 80.90227508544922%, Validation Loss: 1.8514529466629028, Validation Accuracy: 80.90227508544922%, Time taken: 80.90562272071838
+2022-12-09 18:22:46.018082: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:22:46.018097: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:22:46.222365: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:22:46.233550: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:22:46.299882: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:22:46.301124: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:22:46.305067 140661183817536 train.py:73] 
+Start of epoch 69
+I1209 18:24:04.298310 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:24:05.213207 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:24:06.114475 140661183817536 train.py:116] epoch 69, Loss: 0.08467420935630798, Accuracy: 81.02995300292969%, Validation Loss: 1.8662104606628418, Validation Accuracy: 81.02995300292969%, Time taken: 79.80905604362488
+2022-12-09 18:24:06.114637: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:24:06.114651: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:24:06.305929: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:24:06.318474: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:24:06.383446: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:24:06.384618: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:24:06.388731 140661183817536 train.py:73] 
+Start of epoch 70
+I1209 18:25:24.555053 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:25:25.451547 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:25:26.322273 140661183817536 train.py:116] epoch 70, Loss: 0.130362868309021, Accuracy: 81.1746597290039%, Validation Loss: 3.6393556594848633, Validation Accuracy: 81.1746597290039%, Time taken: 79.9332172870636
+2022-12-09 18:25:26.322460: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:25:26.322477: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:25:26.511568: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:25:26.523349: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:25:26.591250: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:25:26.592347: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:25:26.596046 140661183817536 train.py:73] 
+Start of epoch 71
+I1209 18:26:45.131404 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:26:46.015583 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:26:46.884571 140661183817536 train.py:116] epoch 71, Loss: 2.3924121856689453, Accuracy: 81.30899810791016%, Validation Loss: 2.25126314163208, Validation Accuracy: 81.30899810791016%, Time taken: 80.28820204734802
+2022-12-09 18:26:46.884762: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:26:46.884777: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:26:47.075901: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:26:47.089243: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:26:47.151608: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:26:47.152806: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:26:47.156543 140661183817536 train.py:73] 
+Start of epoch 72
+I1209 18:28:05.870448 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:28:06.785240 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:28:07.665867 140661183817536 train.py:116] epoch 72, Loss: 4.018950462341309, Accuracy: 81.43513488769531%, Validation Loss: 4.298861503601074, Validation Accuracy: 81.43513488769531%, Time taken: 80.50898599624634
+2022-12-09 18:28:07.666073: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:28:07.666095: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:28:07.850086: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:28:07.861734: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:28:07.927395: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:28:07.928569: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:28:07.932158 140661183817536 train.py:73] 
+Start of epoch 73
+I1209 18:29:26.203521 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:29:27.118521 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:29:28.007811 140661183817536 train.py:116] epoch 73, Loss: 0.7659218907356262, Accuracy: 81.52843475341797%, Validation Loss: 4.91231107711792, Validation Accuracy: 81.52843475341797%, Time taken: 80.07535457611084
+2022-12-09 18:29:28.007968: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:29:28.007983: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:29:28.200913: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:29:28.211334: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:29:28.271508: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:29:28.272664: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:29:28.275886 140661183817536 train.py:73] 
+Start of epoch 74
+I1209 18:30:46.774795 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:30:47.689290 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:30:48.579627 140661183817536 train.py:116] epoch 74, Loss: 1.5228899717330933, Accuracy: 81.65109252929688%, Validation Loss: 2.620084047317505, Validation Accuracy: 81.65109252929688%, Time taken: 80.3034017086029
+2022-12-09 18:30:48.579895: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:30:48.579914: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:30:48.773230: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:30:48.782893: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:30:48.847268: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:30:48.848398: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:30:48.852613 140661183817536 train.py:73] 
+Start of epoch 75
+I1209 18:32:07.440683 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:32:08.355128 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:32:09.243539 140661183817536 train.py:116] epoch 75, Loss: 0.5641539096832275, Accuracy: 81.79550170898438%, Validation Loss: 1.145337700843811, Validation Accuracy: 81.79550170898438%, Time taken: 80.3905975818634
+2022-12-09 18:32:09.243699: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:32:09.243714: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:32:09.434845: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:32:09.445879: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:32:09.519355: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:32:09.520472: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:32:09.523675 140661183817536 train.py:73] 
+Start of epoch 76
+I1209 18:33:28.243931 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:33:29.166739 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:33:30.058136 140661183817536 train.py:116] epoch 76, Loss: 0.0045383949764072895, Accuracy: 81.94833374023438%, Validation Loss: 1.5704247951507568, Validation Accuracy: 81.94833374023438%, Time taken: 80.53412699699402
+2022-12-09 18:33:30.058361: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:33:30.058379: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:33:30.241029: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:33:30.254926: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:33:30.327842: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:33:30.329005: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:33:30.333703 140661183817536 train.py:73] 
+Start of epoch 77
+I1209 18:34:49.005911 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:34:49.916035 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:34:50.786228 140661183817536 train.py:116] epoch 77, Loss: 0.46941789984703064, Accuracy: 82.09951782226562%, Validation Loss: 1.5492527484893799, Validation Accuracy: 82.09951782226562%, Time taken: 80.45217895507812
+2022-12-09 18:34:50.786424: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:34:50.786440: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:34:50.967392: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:34:50.982599: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:34:51.043821: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:34:51.045025: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:34:51.048963 140661183817536 train.py:73] 
+Start of epoch 78
+I1209 18:36:09.383591 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:36:10.289711 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:36:11.165964 140661183817536 train.py:116] epoch 78, Loss: 3.8922219276428223, Accuracy: 82.24132537841797%, Validation Loss: 1.1442817449569702, Validation Accuracy: 82.24132537841797%, Time taken: 80.11667227745056
+2022-12-09 18:36:11.166220: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:36:11.166238: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:36:11.371973: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:36:11.381718: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:36:11.439435: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:36:11.440609: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:36:11.444004 140661183817536 train.py:73] 
+Start of epoch 79
+I1209 18:37:29.981087 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:37:30.900133 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:37:31.899761 140661183817536 train.py:116] epoch 79, Loss: 0.00011393809108994901, Accuracy: 82.38248443603516%, Validation Loss: 1.8248820304870605, Validation Accuracy: 82.38248443603516%, Time taken: 80.45541405677795
+2022-12-09 18:37:31.900043: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:37:31.900065: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:37:32.083532: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:37:32.098298: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:37:32.164038: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:37:32.165260: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:37:32.171842 140661183817536 train.py:73] 
+Start of epoch 80
+I1209 18:38:50.384068 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:38:51.299969 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:38:52.194334 140661183817536 train.py:116] epoch 80, Loss: 1.6682963371276855, Accuracy: 82.50648498535156%, Validation Loss: 2.2431564331054688, Validation Accuracy: 82.50648498535156%, Time taken: 80.02217745780945
+2022-12-09 18:38:52.194498: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:38:52.194512: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:38:52.389947: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:38:52.407092: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:38:52.467502: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:38:52.468671: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:38:52.472312 140661183817536 train.py:73] 
+Start of epoch 81
+I1209 18:40:10.981302 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:40:11.928166 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:40:12.837030 140661183817536 train.py:116] epoch 81, Loss: 0.2631435692310333, Accuracy: 82.62918853759766%, Validation Loss: 3.722848653793335, Validation Accuracy: 82.62918853759766%, Time taken: 80.3643708229065
+2022-12-09 18:40:12.837200: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:40:12.837215: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:40:13.043042: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:40:13.052854: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:40:13.115587: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:40:13.116753: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:40:13.120882 140661183817536 train.py:73] 
+Start of epoch 82
+I1209 18:41:31.489428 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:41:32.418366 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:41:33.326889 140661183817536 train.py:116] epoch 82, Loss: 0.0006813157233409584, Accuracy: 82.75717163085938%, Validation Loss: 4.434976100921631, Validation Accuracy: 82.75717163085938%, Time taken: 80.20562267303467
+2022-12-09 18:41:33.327131: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:41:33.327147: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:41:33.509780: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:41:33.521193: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:41:33.591563: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:41:33.592711: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:41:33.596996 140661183817536 train.py:73] 
+Start of epoch 83
+I1209 18:42:52.275306 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:42:53.237445 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:42:54.160525 140661183817536 train.py:116] epoch 83, Loss: 2.252017021179199, Accuracy: 82.87885284423828%, Validation Loss: 1.8398290872573853, Validation Accuracy: 82.87885284423828%, Time taken: 80.56317782402039
+2022-12-09 18:42:54.160717: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:42:54.160734: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:42:54.372011: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:42:54.381552: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:42:54.439518: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:42:54.440644: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:42:54.444894 140661183817536 train.py:73] 
+Start of epoch 84
+I1209 18:44:12.965537 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:44:13.880464 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:44:14.799458 140661183817536 train.py:116] epoch 84, Loss: 0.3088800311088562, Accuracy: 83.00231170654297%, Validation Loss: 3.2470803260803223, Validation Accuracy: 83.00231170654297%, Time taken: 80.35420989990234
+2022-12-09 18:44:14.799636: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:44:14.799651: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:44:14.998038: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:44:15.009223: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:44:15.075360: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:44:15.076458: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:44:15.080261 140661183817536 train.py:73] 
+Start of epoch 85
+I1209 18:45:33.536062 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:45:34.490714 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:45:35.412247 140661183817536 train.py:116] epoch 85, Loss: 0.003894990077242255, Accuracy: 83.09868621826172%, Validation Loss: 5.655294418334961, Validation Accuracy: 83.09868621826172%, Time taken: 80.3316400051117
+2022-12-09 18:45:35.412511: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:45:35.412530: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:45:35.601668: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:45:35.613028: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:45:35.679526: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:45:35.680649: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:45:35.684294 140661183817536 train.py:73] 
+Start of epoch 86
+I1209 18:46:53.859465 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:46:54.788280 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:46:55.703311 140661183817536 train.py:116] epoch 86, Loss: 0.20215724408626556, Accuracy: 83.20154571533203%, Validation Loss: 2.1703438758850098, Validation Accuracy: 83.20154571533203%, Time taken: 80.01868343353271
+2022-12-09 18:46:55.703565: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:46:55.703583: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:46:55.902662: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:46:55.912599: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:46:55.975721: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:46:55.976964: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:46:55.980947 140661183817536 train.py:73] 
+Start of epoch 87
+I1209 18:48:13.949382 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:48:14.873033 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:48:15.763569 140661183817536 train.py:116] epoch 87, Loss: 0.0027708839625120163, Accuracy: 83.30738067626953%, Validation Loss: 5.2667131423950195, Validation Accuracy: 83.30738067626953%, Time taken: 79.7822618484497
+2022-12-09 18:48:15.763722: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:48:15.763737: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:48:15.961216: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:48:15.977138: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:48:16.047586: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:48:16.048811: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:48:16.052992 140661183817536 train.py:73] 
+Start of epoch 88
+I1209 18:49:34.356923 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:49:35.368729 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:49:36.304340 140661183817536 train.py:116] epoch 88, Loss: 0.899193525314331, Accuracy: 83.35597229003906%, Validation Loss: 3.7259249687194824, Validation Accuracy: 83.35597229003906%, Time taken: 80.25097799301147
+2022-12-09 18:49:36.304507: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:49:36.304522: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:49:36.503270: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:49:36.514387: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:49:36.583321: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:49:36.584434: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:49:36.588411 140661183817536 train.py:73] 
+Start of epoch 89
+I1209 18:50:54.739930 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:50:55.652990 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:50:56.552728 140661183817536 train.py:116] epoch 89, Loss: 1.9011698961257935, Accuracy: 83.46833801269531%, Validation Loss: 6.151015758514404, Validation Accuracy: 83.46833801269531%, Time taken: 79.96399450302124
+2022-12-09 18:50:56.552892: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:50:56.552907: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:50:56.754028: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:50:56.763631: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:50:56.827232: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:50:56.828323: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:50:56.832193 140661183817536 train.py:73] 
+Start of epoch 90
+I1209 18:52:15.377930 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:52:16.314679 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:52:17.229358 140661183817536 train.py:116] epoch 90, Loss: 0.0034460138995200396, Accuracy: 83.59210205078125%, Validation Loss: 5.620446681976318, Validation Accuracy: 83.59210205078125%, Time taken: 80.3968231678009
+2022-12-09 18:52:17.229543: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:52:17.229560: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:52:17.417227: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:52:17.430107: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:52:17.495687: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:52:17.496876: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:52:17.500858 140661183817536 train.py:73] 
+Start of epoch 91
+I1209 18:53:36.021956 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:53:36.964044 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:53:37.876866 140661183817536 train.py:116] epoch 91, Loss: 2.7591819763183594, Accuracy: 83.68997192382812%, Validation Loss: 2.5750184059143066, Validation Accuracy: 83.68997192382812%, Time taken: 80.37565183639526
+2022-12-09 18:53:37.877084: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:53:37.877102: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:53:38.070470: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:53:38.083175: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:53:38.151736: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:53:38.152905: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:53:38.156532 140661183817536 train.py:73] 
+Start of epoch 92
+I1209 18:54:56.352295 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:54:57.314528 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:54:58.253008 140661183817536 train.py:116] epoch 92, Loss: 0.1737988442182541, Accuracy: 83.71675872802734%, Validation Loss: 6.644575119018555, Validation Accuracy: 83.71675872802734%, Time taken: 80.09612226486206
+2022-12-09 18:54:58.253212: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:54:58.253228: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:54:58.456910: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:54:58.467216: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:54:58.535726: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:54:58.536997: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:54:58.541035 140661183817536 train.py:73] 
+Start of epoch 93
+I1209 18:56:16.594441 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:56:17.556248 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:56:18.472881 140661183817536 train.py:116] epoch 93, Loss: 1.1786245107650757, Accuracy: 83.76641082763672%, Validation Loss: 3.5303409099578857, Validation Accuracy: 83.76641082763672%, Time taken: 79.93146324157715
+2022-12-09 18:56:18.473047: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:56:18.473062: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:56:18.652478: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:56:18.665375: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:56:18.735584: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:56:18.736764: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:56:18.743595 140661183817536 train.py:73] 
+Start of epoch 94
+I1209 18:57:37.279529 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:57:38.212848 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:57:39.115214 140661183817536 train.py:116] epoch 94, Loss: 0.23540285229682922, Accuracy: 83.78306579589844%, Validation Loss: 1.9577202796936035, Validation Accuracy: 83.78306579589844%, Time taken: 80.37127256393433
+2022-12-09 18:57:39.115439: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:57:39.115456: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:57:39.310816: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:57:39.325171: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:57:39.387571: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:57:39.388746: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:57:39.392113 140661183817536 train.py:73] 
+Start of epoch 95
+I1209 18:58:57.222960 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 18:58:58.193628 140661183817536 train.py:102] Finished training after one epoch
+I1209 18:58:59.121869 140661183817536 train.py:116] epoch 95, Loss: 0.059820786118507385, Accuracy: 83.85147094726562%, Validation Loss: 2.82492733001709, Validation Accuracy: 83.85147094726562%, Time taken: 79.72944378852844
+2022-12-09 18:58:59.122102: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 18:58:59.122121: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 18:58:59.314605: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 18:58:59.325102: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 18:58:59.383635: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 18:58:59.384847: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 18:58:59.389033 140661183817536 train.py:73] 
+Start of epoch 96
+I1209 19:00:17.286066 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 19:00:18.250991 140661183817536 train.py:102] Finished training after one epoch
+I1209 19:00:19.186581 140661183817536 train.py:116] epoch 96, Loss: 0.8715911507606506, Accuracy: 83.94024658203125%, Validation Loss: 6.777539253234863, Validation Accuracy: 83.94024658203125%, Time taken: 79.79720973968506
+2022-12-09 19:00:19.186736: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 19:00:19.186752: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 19:00:19.384588: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 19:00:19.394947: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 19:00:19.459376: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 19:00:19.460495: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 19:00:19.464078 140661183817536 train.py:73] 
+Start of epoch 97
+I1209 19:01:37.888376 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 19:01:38.843382 140661183817536 train.py:102] Finished training after one epoch
+I1209 19:01:39.756906 140661183817536 train.py:116] epoch 97, Loss: 2.9992775917053223, Accuracy: 84.01133728027344%, Validation Loss: 2.036345958709717, Validation Accuracy: 84.01133728027344%, Time taken: 80.29251337051392
+2022-12-09 19:01:39.757117: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 19:01:39.757134: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 19:01:39.950084: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 19:01:39.963010: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 19:01:40.027333: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 19:01:40.028429: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 19:01:40.032223 140661183817536 train.py:73] 
+Start of epoch 98
+I1209 19:02:58.563565 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 19:02:59.493850 140661183817536 train.py:102] Finished training after one epoch
+I1209 19:03:00.404125 140661183817536 train.py:116] epoch 98, Loss: 0.005533686839044094, Accuracy: 84.06912231445312%, Validation Loss: 3.546199321746826, Validation Accuracy: 84.06912231445312%, Time taken: 80.37155151367188
+2022-12-09 19:03:00.404344: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 19:03:00.404368: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 19:03:00.592296: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 19:03:00.603167: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 19:03:00.671581: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 19:03:00.672767: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 19:03:00.676913 140661183817536 train.py:73] 
+Start of epoch 99
+I1209 19:04:18.959834 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 19:04:19.863355 140661183817536 train.py:102] Finished training after one epoch
+I1209 19:04:20.768563 140661183817536 train.py:116] epoch 99, Loss: 0.007300646975636482, Accuracy: 84.138916015625%, Validation Loss: 6.582635879516602, Validation Accuracy: 84.138916015625%, Time taken: 80.09105658531189
+2022-12-09 19:04:20.768811: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 19:04:20.768829: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 19:04:20.945296: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 19:04:20.956952: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 19:04:21.026289: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 19:04:21.027127: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+I1209 19:04:21.030212 140661183817536 train.py:73] 
+Start of epoch 100
+I1209 19:05:39.349206 140661183817536 train.py:97] Saving checkpoint to /home/RUS_CIP/st174258/dl-lab-22w-team06/experiments/run_2022-12-09T16-50-25-482170/ckpts.
+I1209 19:05:40.282464 140661183817536 train.py:102] Finished training after one epoch
+I1209 19:05:41.226777 140661183817536 train.py:116] epoch 100, Loss: 2.2561395168304443, Accuracy: 84.21553802490234%, Validation Loss: 3.215632915496826, Validation Accuracy: 84.21553802490234%, Time taken: 80.19627475738525
+2022-12-09 19:05:41.226960: I tensorflow/core/profiler/lib/profiler_session.cc:101] Profiler session initializing.
+2022-12-09 19:05:41.226976: I tensorflow/core/profiler/lib/profiler_session.cc:116] Profiler session started.
+2022-12-09 19:05:41.434005: I tensorflow/core/profiler/lib/profiler_session.cc:67] Profiler session collecting data.
+2022-12-09 19:05:41.443479: I tensorflow/core/profiler/backends/gpu/cupti_tracer.cc:1798] CUPTI activity buffer flushed
+2022-12-09 19:05:41.507479: I tensorflow/core/profiler/backends/gpu/cupti_collector.cc:522]  GpuTracer has collected 26 callback api events and 18 activity events. 
+2022-12-09 19:05:41.508576: I tensorflow/core/profiler/lib/profiler_session.cc:128] Profiler session tear down.
+Traceback (most recent call last):
+  File "main.py", line 59, in <module>
+    app.run(main)
+  File "/usr/local/lib/python3.8/dist-packages/absl/app.py", line 308, in run
+    _run_main(main, args)
+  File "/usr/local/lib/python3.8/dist-packages/absl/app.py", line 254, in _run_main
+    sys.exit(main(argv))
+  File "main.py", line 50, in main
+    for _ in trainer.train():
+TypeError: 'NoneType' object is not iterable
