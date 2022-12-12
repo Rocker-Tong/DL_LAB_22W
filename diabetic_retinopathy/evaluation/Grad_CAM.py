@@ -111,10 +111,19 @@ def deep_visualization(images, grad_cam_model, guided_backprop_model, dataset, s
         superimposed_guided_backpropagation = grads_guided_backpropagation * 0.3 + img
         guided_backpropagation_img = tf.keras.utils.array_to_img(superimposed_guided_backpropagation)
 
+        # Superimpose the guided_backpropagation with heatmap to create the guided Grad-CAM
+        # guided_grad_cam = np.uint8(guided_backpropagation_img * heatmap)
+        resized_gradcam = cv2.resize(heatmap, superimposed_guided_backpropagation.shape[:-1])
+        gradcam_r = np.repeat(resized_gradcam[..., None], 3, axis=2)
+        guided_grad_cam = guided_backpropagation_img * gradcam_r
+        guided_grad_cam_img = tf.keras.utils.array_to_img(guided_grad_cam)
+
         # Save the superimposed image
         index += 1
         superimposed_img.save(path + '/images/grad_cam/grad_cam_of_image_00' + str(index) + '_with_prediction_'
                               + str(idx) + '.jpg')
-        guided_backpropagation_img.save(path + '/images/guided_backpropagation/guided_backpropagation_of_image_00' + str(index) + '_with_prediction_'
-                              + str(idx) + '.jpg')
+        guided_backpropagation_img.save(path + '/images/guided_backpropagation/guided_backpropagation_of_image_00'
+                                        + str(index) + '_with_prediction_' + str(idx) + '.jpg')
+        guided_grad_cam_img.save(path + '/images/guided_grad_cam/guided_grad_cam_of_image_00' + str(index)
+                                 + '_with_prediction_' + str(idx) + '.jpg')
 

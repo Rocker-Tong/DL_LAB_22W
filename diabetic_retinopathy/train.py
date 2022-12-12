@@ -47,8 +47,8 @@ class Trainer(object):
             # behavior during training versus inference (e.g. Dropout).
             predictions = self.model(images, training=True)
             train_loss = self.loss_object(labels, predictions)
-        gradients = tape.gradient(train_loss, self.model.trainable_weights)
-        self.optimizer.apply_gradients(zip(gradients, self.model.trainable_weights))
+        gradients = tape.gradient(train_loss, self.model.trainable_variables)
+        self.optimizer.apply_gradients(zip(gradients, self.model.trainable_variables))
         train_accuracy = self.accuracy_objective(labels, predictions)
         return train_loss, train_accuracy
 
@@ -70,30 +70,28 @@ class Trainer(object):
         logging.info(f'{self.ds_train}')
         logging.info('Starting')
 
-        # Clarify the epochs to iterate
         epochs = 5
         for epoch in range(epochs):
             logging.info("\nStart of epoch %d" % (epoch+1,))
             start_time = time.time()
 
-            # Iterate over the batches of the dataset
             for batch_idx, (images, labels) in enumerate(self.ds_train):
                 labels = tf.reshape(labels, (-1, 1))
                 train_loss_list = []
                 train_accuracy_list = []
                 with tf.name_scope('input_image'):
                     tf.summary.image('input', images, 5)
-                    train_loss_value, train_acc_value = self.train_step(images, labels)
+                    loss_value, accuracy_value = self.train_step(images, labels)
 
-                train_loss_list.append(train_loss_value)
-                train_accuracy_list.append(train_acc_value)
+                train_loss_list.append(loss_value)
+                train_accuracy_list.append(accuracy_value)
 
             for val_images, val_labels in self.ds_val:
                 val_loss_list = []
                 val_accuracy_list = []
-                val_loss_value, val_acc_value = self.val_step(val_images, val_labels)
-                val_loss_list.append(val_loss_value)
-                val_accuracy_list.append(val_acc_value)
+                loss_value, accuracy_value = self.val_step(val_images, val_labels)
+                val_loss_list.append(loss_value)
+                val_accuracy_list.append(accuracy_value)
 
             if epoch % self.ckpt_interval == 0:
                 logging.info(f'Saving checkpoint to {self.run_paths["path_ckpts_train"]}.')

@@ -4,6 +4,7 @@ from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class ConfusionMatrix(tf.keras.metrics.Metric):
 
     def __init(self, name="confusion_matrix", **kwargs):
@@ -24,20 +25,8 @@ class ConfusionMatrix(tf.keras.metrics.Metric):
                                                          num_classes=2,
                                                          dtype=tf.int32)
 
-
-        # one_hot_true = tf.one_hot(labels, depth=self.2)
-        # one_hot_pred = tf.one_hot(predictions, depth=self.2)
-
-        # self.confusion_matrix.assign_add(
-        #     tf.matmul(one_hot_true, one_hot_pred, transpose_a=True))
-
     def result(self):
         return self.confusion_matrix
-
-    # def reset_states(self):
-    #     # Reset the state of the metric
-    #     self.confusion_matrix.assign(
-    #         tf.zeros([2, 2]))
 
 
 def confusion_matrix_show(y_true, y_pred):

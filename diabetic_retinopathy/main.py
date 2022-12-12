@@ -16,7 +16,7 @@ import tensorflow as tf
 
 
 FLAGS = flags.FLAGS
-flags.DEFINE_boolean('train', False, 'Specify whether to train or evaluate a model.')
+flags.DEFINE_boolean('train', True, 'Specify whether to train or evaluate a model.')
 
 
 
@@ -30,6 +30,7 @@ def main(argv):
         utils_misc.set_loggers(run_paths['path_logs_train'], logging.INFO)
     else:
         utils_misc.set_loggers(run_paths['path_logs_eval'], logging.INFO)
+
 
     # gin-config
     gin.parse_config_files_and_bindings(['configs/config.gin'], [])
