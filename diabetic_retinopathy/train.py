@@ -24,7 +24,9 @@ class Trainer(object):
 
         # Checkpoint Manager
         self.ckpt = tf.train.Checkpoint(step=tf.Variable(1), model=model, optimizer=tf.keras.optimizers.Adam())
-        self.manager = tf.train.CheckpointManager(self.ckpt, directory=self.run_paths["path_ckpts_train"], max_to_keep=10)
+        self.manager = tf.train.CheckpointManager(self.ckpt,
+                                                  directory=self.run_paths["path_ckpts_train"],
+                                                  max_to_keep=10)
 
         # Loss objective
         self.loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=False)
@@ -57,20 +59,24 @@ class Trainer(object):
     def val_step(self, images, labels):
         # training=False is only needed if there are layers with different
         # behavior during training versus inference (e.g. Dropout).
-        with tf.GradientTape() as tape:
-            # training=True is only needed if there are layers with different
-            # behavior during training versus inference (e.g. Dropout).
-            predictions = self.model(images, training=True)
-            val_loss = self.loss_object(labels, predictions)
+        predictions = self.model(images, training=True)
+        val_loss = self.loss_object(labels, predictions)
         val_accuracy = self.accuracy_objective(labels, predictions)
         return val_loss, val_accuracy
 
 
-    def train(self, batch_size=32):
+    def train(self, epochs, batch_size=32):
         logging.info(f'{self.ds_train}')
         logging.info('Starting')
+        self.ckpt.restore(self.manager.latest_checkpoint)
 
-        epochs = 5
+        # If training was interrupted unexpectedly, resume the training process
+        if self.manager.latest_checkpoint:
+            print("Restored from {}".format(self.manager.latest_checkpoint))
+        else:
+            print("Initializing from scratch.")
+
+        # epochs = 10
         for epoch in range(epochs):
             logging.info("\nStart of epoch %d" % (epoch+1,))
             start_time = time.time()
@@ -79,14 +85,12 @@ class Trainer(object):
                 labels = tf.reshape(labels, (-1, 1))
                 train_loss_list = []
                 train_accuracy_list = []
-                with tf.name_scope('input_image'):
-                    tf.summary.image('input', images, 5)
-                    loss_value, accuracy_value = self.train_step(images, labels)
-
+                loss_value, accuracy_value = self.train_step(images, labels)
                 train_loss_list.append(loss_value)
                 train_accuracy_list.append(accuracy_value)
 
             for val_images, val_labels in self.ds_val:
+                labels = tf.reshape(labels, (-1, 1))
                 val_loss_list = []
                 val_accuracy_list = []
                 loss_value, accuracy_value = self.val_step(val_images, val_labels)
@@ -109,7 +113,7 @@ class Trainer(object):
             val_loss = self.val_loss.result()
             self.train_accuracy.update_state(train_accuracy_list)
             train_accuracy = self.train_accuracy.result()
-            self.val_accuracy.update_state(train_accuracy_list)
+            self.val_accuracy.update_state(val_accuracy_list)
             val_accuracy = self.val_accuracy.result()
 
             template = 'epoch {}, Loss: {}, Accuracy: {}%, Validation Loss: {}, Validation Accuracy: {}%, Time taken: {}'

@@ -31,11 +31,11 @@ def train_func(config):
     ds_train, ds_val, ds_test, ds_info = load()
 
     # model
-    # model = vgg_like(input_shape=ds_info.features["image"].shape, n_classes=ds_info.features["label"].num_classes)
-    model = CNN()
+    model = vgg_like((256, 256, 3), n_classes=2)
+    # model = CNN()
 
     trainer = Trainer(model, ds_train, ds_val, ds_info, run_paths)
-    for val_accuracy in trainer.train():
+    for val_accuracy in trainer.train(10):
         tune.report(val_accuracy=val_accuracy)
 
 

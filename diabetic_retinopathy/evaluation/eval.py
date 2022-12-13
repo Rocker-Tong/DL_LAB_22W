@@ -8,8 +8,9 @@ def evaluate(model, ds_test, ds_info, run_paths):
 
     # load the checkpoint
     checkpoint = tf.train.Checkpoint(step=tf.Variable(1), model=model, optimizer=tf.keras.optimizers.Adam())
-    checkpoint_manager = tf.train.CheckpointManager(checkpoint, run_paths["path_ckpts_train"], max_to_keep=10)
-    checkpoint.restore(tf.train.latest_checkpoint(run_paths["path_ckpts_train"]))
+    checkpoint_manager = tf.train.CheckpointManager(checkpoint, "/Users/rocker/dl-lab-22w-team06/experiments/run_2022-12-13T11-12-51-762790/ckpts", max_to_keep=10)
+    # checkpoint.restore(tf.train.latest_checkpoint(run_paths["path_ckpts_train"]))
+    checkpoint.restore(checkpoint_manager.latest_checkpoint)
 
     if checkpoint_manager.latest_checkpoint:
         tf.print("Restored from {}".format(checkpoint_manager.latest_checkpoint))
@@ -22,11 +23,11 @@ def evaluate(model, ds_test, ds_info, run_paths):
                   loss=tf.keras.losses.BinaryCrossentropy(),
                   metrics=[ConfusionMatrix()])
 
-    # Compute accuracy
+    '''# Compute accuracy
     for batch_idx, (test_image, test_label) in enumerate(ds_test):
         batch_result = model.evaluate(test_image, test_label, return_dict=True)
-        predictions = model.predict(test_image[:5])
-        print(predictions)
+        # predictions = model.predict(test_image[:5])
+        # print(predictions)
         for key, value in batch_result.items():
             if key.find('accuracy') != -1 or key.find('loss') != -1:
                 batch_result[key] *= test_label.shape[0]
@@ -44,7 +45,7 @@ def evaluate(model, ds_test, ds_info, run_paths):
     # Logging test information
     logging.info(f"Evaluating at step: {step}...")
     for key, value in result.items():
-        logging.info('{}:\n{}'.format(key, value))
+        logging.info('{}:\n{}'.format(key, value))'''
 
     # t_loss = tf.keras.losses.BinaryCrossentropy(from_logits=False)
     # test_loss = tf.keras.metrics.Mean(name='test_loss')

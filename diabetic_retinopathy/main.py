@@ -39,23 +39,27 @@ def main(argv):
     # setup pipeline
     ds_train, ds_val, ds_test, ds_info = datasets.load()
 
-    # model
+    # Choose model
     # model = ResNet101(bottleneck_list=[3, 4, 23, 3], neurons=64)
     # model = VGG16()
     model = CNN()
     model.build((16, 256, 256, 3))
+
+    # Show the model structure
     model.get_layer('sequential').summary()
     logging.info('The model is loaded successfully.')
 
     if FLAGS.train:
         logging.info('Start the training process...')
         trainer = Trainer(model, ds_train, ds_val, ds_info, run_paths=run_paths)
-        # opt = tf.keras.optimizers.Adam(lr=0.0005 / 10)
+
+        '''Method of compiled model.fit()'''
+        # opt = tf.keras.optimizers.Adam(lr=5e-5)
         # model.compile(loss="BinaryCrossentropy", optimizer=opt, metrics=["accuracy"])
-        # model.fit(ds_train, epochs=10, batch_size=8, validation_data=ds_val)
-        # trainer = Trainer(model, ds_train, ds_val, ds_info, run_paths)
-        for _ in trainer.train():
-            continue
+        # model.fit(ds_train, epochs=10, batch_size=16, validation_data=ds_val)
+
+        '''Method of low-level control of training'''
+        trainer.train(10)
 
     else:
         evaluate(model,

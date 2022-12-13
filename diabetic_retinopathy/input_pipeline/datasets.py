@@ -109,7 +109,8 @@ def prepare(ds_train, ds_val, ds_test, ds_info, buffer_size=256, batch_size=16, 
     AUTOTUNE = tf.data.experimental.AUTOTUNE
 
     # Prepare training dataset
-    # ds_train = preprocessing.augment(ds_train)
+    ds_train = augment(ds_train)
+    logging.info('Train images are augmented.')
     if caching:
         ds_train = ds_train.cache()
     ds_train = ds_train.shuffle(buffer_size)

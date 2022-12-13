@@ -30,7 +30,8 @@ def model_for_visualization(model):
         return tf.nn.relu(x), grad
 
     # extract the corresponding layer result from the model
-    guided_backprop_model = tf.keras.models.Model([model.get_layer('sequential').inputs], [model.get_layer('sequential').get_layer('last_conv').output])
+    guided_backprop_model = tf.keras.models.Model([model.get_layer('sequential').inputs],
+                                                  [model.get_layer('sequential').get_layer('last_conv').output])
     layer_dict = [layer for layer in guided_backprop_model.layers[1:] if hasattr(layer, 'activation')]
     for layer in layer_dict:
         if layer.activation == tf.keras.layers.ReLU:
