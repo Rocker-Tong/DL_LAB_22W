@@ -13,7 +13,7 @@ import gin
 from utils import utils_params, utils_misc
 import logging
 from PIL import Image
-from evaluation.metrics import confusion_matrix_show, confusion_matrix_plot, accuracy, roc_curve_plot
+from evaluation.metrics import ConfusionMatrix
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from train import Trainer
 from input_pipeline.preprocessing import augment
@@ -21,6 +21,7 @@ import cv2
 from evaluation.Grad_CAM import deep_visualize
 import shutil
 from evaluation.make_new_folder import make_folder
+from models.transfer_learning import inception_resnet_v2, mobilenet
 
 
 # train_set_path = '/Users/rocker/Desktop/Uni Stuttgart/DL Lab/dataset/IDRID_dataset/train.tfrecords'
@@ -268,42 +269,29 @@ def train_model(name, train, validation):
     if name == 'CNN':
         model = CNN()
         opt = tf.keras.optimizers.RMSprop(0.001)
-        model.compile(loss="BinaryCrossentropy", optimizer=opt, metrics=["accuracy"])
-        # model.build((32, 256, 256, 3))
-        # model.get_layer('sequential').summary()
-        # train_gen = augment(train)
-        # val_gen = augment(validation)
-        history = model.fit(train, epochs=10, batch_size=32, validation_data=validation)
-        plt.plot(history.history["loss"])
-        plt.legend(["loss"])
-        plt.xticks(range(10))
-        plt.xlabel("epochs")
-        plt.title("Training process")
-        plt.show()
 
     elif name == 'VGG16':
         model = VGG16()
-        opt = tf.keras.optimizers.Adam(lr=0.0005/10)
-        model.compile(loss="BinaryCrossentropy", optimizer=opt, metrics=["accuracy"])
-        history = model.fit(train, epochs=10, batch_size=8, validation_data=validation)
-        plt.plot(history.history["loss"])
-        plt.legend(["loss"])
-        plt.xticks(range(10))
-        plt.xlabel("epochs")
-        plt.title("Training process")
-        plt.show()
 
     elif name == 'ResNet101':
         model = ResNet101(bottleneck_list=[3, 4, 23, 3], neurons=64)
-        opt = tf.keras.optimizers.Adam(lr=0.0005/10)
-        model.compile(loss="BinaryCrossentropy", optimizer=opt, metrics=["accuracy"])
-        history = model.fit(train, epochs=10, batch_size=8, validation_data=validation)
-        plt.plot(history.history["loss"])
-        plt.legend(["loss"])
-        plt.xticks(range(10))
-        plt.xlabel("epochs")
-        plt.title("Training process")
-        plt.show()
+
+    elif name == 'inception_resnet_v2':
+        model = inception_resnet_v2()
+
+    elif name == 'mobilenet':
+        model = mobilenet()
+
+    opt = tf.keras.optimizers.Adam(lr=0.0005/10)
+    # opt = tf.keras.optimizers.RMSprop(0.001)
+    model.compile(loss="BinaryCrossentropy", optimizer=opt, metrics=["accuracy"])
+    history = model.fit(train, epochs=10, batch_size=8, validation_data=validation)
+    plt.plot(history.history["loss"])
+    plt.legend(["loss"])
+    plt.xticks(range(10))
+    plt.xlabel("epochs")
+    plt.title("Training process")
+    plt.show()
 
     return model
 
@@ -337,9 +325,10 @@ def test_model(model, train, validation, test, data_dir):
     return y_pred_origin, y_pred, model
 
 
-y_pred_origin, y_pred, model = test_model(model='CNN', train=train_set, validation=val_set, test=test_set, data_dir=data_dir)
+y_pred_origin, y_pred, model = test_model(model='inception_resnet_v2', train=train_set, validation=val_set, test=test_set, data_dir=data_dir)
 print(test_labels)
 print(len(test_labels))
+ConfusionMatrix(y_pred, test_labels)
 # cm = confusion_matrix_show(y_true=test_labels, y_pred=y_pred)
 # confusion_matrix_plot(cm)
 # accuracy, precision, recall, f1_score, sensitivity, specificity = accuracy(cm)

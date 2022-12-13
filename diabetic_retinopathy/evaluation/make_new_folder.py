@@ -1,7 +1,9 @@
 import os
 import shutil
+import gin
 
 
+@gin.configurable
 def make_folder(path):
     grad_cam_path = path + "/images/grad_cam/"
     if os.path.exists(grad_cam_path):

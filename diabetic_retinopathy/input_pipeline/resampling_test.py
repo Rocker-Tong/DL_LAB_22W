@@ -35,8 +35,17 @@ data_dir = "/Users/yinzheming/Desktop/Deep_Learning/Lab/IDRID_dataset"
 # img.save(data_dir + '/images/visualization/new_image.jpg')
 
 train_set, val_set, test_set, ds_info = load("IDRID", data_dir)
+y_true = []
+for idx, (test_images, test_labels) in enumerate(test_set):
+    dim = test_labels.shape[0]
+    for i in range(dim):
+        y_true.append(test_labels[i].numpy())
+print(y_true)
+
+
+
 # test_set = test_set.unbatch()
-model = CNN()
+# model = CNN()
 # for idx, (test_image, test_label) in enumerate(test_set):
     # if idx < 1:
         # test_image = test_image.unbatch()
@@ -48,7 +57,7 @@ model = CNN()
         # print(img.shape)
     # else:
     #     break
-img_path = data_dir + '/images/test/IDRiD_001.jpg'
-img = tf.keras.utils.load_img(img_path)
-img = tf.keras.utils.img_to_array(img)
-print(img.shape)
+# img_path = data_dir + '/images/test/IDRiD_001.jpg'
+# img = tf.keras.utils.load_img(img_path)
+# img = tf.keras.utils.img_to_array(img)
+# print(img.shape)

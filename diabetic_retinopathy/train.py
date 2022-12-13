@@ -102,8 +102,8 @@ class Trainer(object):
                 # Save checkpoint
                 self.manager.save()
 
-            if epochs % epochs == 0:
-                logging.info(f'Finished training after one epoch')
+            if epoch % epochs == 0:
+                logging.info(f'Finished training after epochs')
                 # Save final checkpoint
                 self.manager.save()
 

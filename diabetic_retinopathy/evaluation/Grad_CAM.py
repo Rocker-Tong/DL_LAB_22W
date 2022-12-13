@@ -20,9 +20,11 @@ def deep_visualize(model, images, dataset, step, run_paths):
 @gin.configurable
 def model_for_visualization(model):
     # extract the corresponding layer result from the model
-    grad_cam_model = tf.keras.models.Model([model.get_layer('sequential').input],
-                                           [model.get_layer('sequential').get_layer('last_conv').output,
-                                            model.get_layer('sequential').get_layer('last_output').output])
+    # grad_cam_model = tf.keras.models.Model([model.get_layer('sequential').input],
+    #                                        [model.get_layer('sequential').get_layer('last_conv').output,
+    #                                         model.get_layer('sequential').get_layer('last_output').output])
+    # If we use the model from transfer learning
+    grad_cam_model = tf.keras.models.Model([model.input], [model.get_layer('last_conv').output, model.get_layer('last_output').output])
     @tf.custom_gradient
     def guided_relu(x):
         def grad(dy):
@@ -30,8 +32,10 @@ def model_for_visualization(model):
         return tf.nn.relu(x), grad
 
     # extract the corresponding layer result from the model
-    guided_backprop_model = tf.keras.models.Model([model.get_layer('sequential').inputs],
-                                                  [model.get_layer('sequential').get_layer('last_conv').output])
+    # guided_backprop_model = tf.keras.models.Model([model.get_layer('sequential').inputs],
+    #                                               [model.get_layer('sequential').get_layer('last_conv').output])
+    # If we use the models from transfer learning
+    guided_backprop_model = tf.keras.models.Model([model.inputs], [model.get_layer('last_conv').output])
     layer_dict = [layer for layer in guided_backprop_model.layers[1:] if hasattr(layer, 'activation')]
     for layer in layer_dict:
         if layer.activation == tf.keras.layers.ReLU:

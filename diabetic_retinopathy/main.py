@@ -13,6 +13,7 @@ from models.Resnet import ResNet101
 from models.VGG import VGG16
 from models.CNN import CNN
 import tensorflow as tf
+from models.transfer_learning import inception_resnet_v2, mobilenet
 
 
 FLAGS = flags.FLAGS
@@ -42,11 +43,17 @@ def main(argv):
     # Choose model
     # model = ResNet101(bottleneck_list=[3, 4, 23, 3], neurons=64)
     # model = VGG16()
-    model = CNN()
-    model.build((16, 256, 256, 3))
+    # model = CNN()
+    model = inception_resnet_v2()
+    # model = mobilenet()
+
+    # model.build((16, 256, 256, 3))
 
     # Show the model structure
-    model.get_layer('sequential').summary()
+    # model.get_layer('sequential').summary()
+
+    # Show the model structure while using transfer learning
+    model.summary()
     logging.info('The model is loaded successfully.')
 
     if FLAGS.train:
@@ -62,10 +69,7 @@ def main(argv):
         trainer.train(10)
 
     else:
-        evaluate(model,
-                 ds_test,
-                 ds_info,
-                 run_paths)
+        evaluate(model, ds_test)
 
 if __name__ == "__main__":
     app.run(main)

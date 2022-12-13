@@ -1,14 +1,19 @@
+import gin
 import tensorflow as tf
 import logging
 from evaluation.metrics import ConfusionMatrix
+from evaluation.make_new_folder import make_folder
+import numpy as np
+from evaluation.Grad_CAM import deep_visualize
 
 
-def evaluate(model, ds_test, ds_info, run_paths):
+@gin.configurable
+def evaluate(model, ds_test, path):
     """evaluate performance of the model"""
 
     # load the checkpoint
     checkpoint = tf.train.Checkpoint(step=tf.Variable(1), model=model, optimizer=tf.keras.optimizers.Adam())
-    checkpoint_manager = tf.train.CheckpointManager(checkpoint, "/Users/rocker/dl-lab-22w-team06/experiments/run_2022-12-13T11-12-51-762790/ckpts", max_to_keep=10)
+    checkpoint_manager = tf.train.CheckpointManager(checkpoint, "/Users/yinzheming/dl-lab-22w-team06/experiments/run_2022-12-13T17-32-06-130273/ckpts", max_to_keep=10)
     # checkpoint.restore(tf.train.latest_checkpoint(run_paths["path_ckpts_train"]))
     checkpoint.restore(checkpoint_manager.latest_checkpoint)
 
@@ -16,12 +21,39 @@ def evaluate(model, ds_test, ds_info, run_paths):
         tf.print("Restored from {}".format(checkpoint_manager.latest_checkpoint))
     else:
         tf.print("Initializing from scratch.")
-    step = int(checkpoint.step.numpy())
+    # step = int(checkpoint.step.numpy())
 
     # Compile the model
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                  loss=tf.keras.losses.BinaryCrossentropy(),
-                  metrics=[ConfusionMatrix()])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #               loss=tf.keras.losses.BinaryCrossentropy(),
+    #               metrics=[ConfusionMatrix()])
+
+    y_pred_origin = model.predict(ds_test)
+    y_pred = np.where(y_pred_origin > 0.5, 1, 0)
+    y_pred = np.ndarray.tolist(y_pred)
+    y_pred = [x[0] for x in y_pred]
+    print(y_pred)
+    print(len(y_pred))
+
+    # Get the true label list of test set
+    y_true = []
+    for idx, (test_images, test_labels) in enumerate(ds_test):
+        dim = test_labels.shape[0]
+        for i in range(dim):
+            y_true.append(test_labels[i].numpy())
+    print(y_true)
+    print(len(y_true))
+
+    # Plot Confusion Matrix
+    ConfusionMatrix(y_pred, y_true)
+
+    # Make folder for saving visualization image
+    make_folder(path)
+
+    # Deep Visualization
+    for idx, (test_image, test_label) in enumerate(ds_test):
+        deep_visualize(model=model, images=test_image, dataset=ds_test, step=idx, run_paths=path)
+
 
     '''# Compute accuracy
     for batch_idx, (test_image, test_label) in enumerate(ds_test):
