@@ -40,7 +40,7 @@ class Bottleneck(k.Model):
 
 
 class ResNet101(k.Model):
-    def __init__(self, bottleneck_list, neurons):  # block_list表示每个block有几个餐叉结构
+    def __init__(self, bottleneck_list, neurons, classification):  # block_list表示每个block有几个餐叉结构
         super(ResNet101, self).__init__()
         # self.num_bottleneck = len(bottleneck_list)  # 共有几个block
         # self.bottleneck_list = bottleneck_list
@@ -60,7 +60,12 @@ class ResNet101(k.Model):
             neurons *= 2  # 下一个block的卷积核数是上一个block的2倍
         # 最后的池化层和全连接层（算1层）
         bottleneck_model.add(layers.GlobalAveragePooling2D())
-        bottleneck_model.add(layers.Dense(1, activation='sigmoid', name='last_output'))
+        if classification == 'binary':
+            bottleneck_model.add(layers.Dense(1, activation='sigmoid', name='last_output'))
+        elif classification == 'multiple':
+            bottleneck_model.add(layers.Dense(5, activation='softmax', name='last_output'))
+        elif classification == 'regression':
+            bottleneck_model.add(layers.Dense(1, activation='linear', name='last_output'))
 
         self.bottleneck_model = bottleneck_model
 

@@ -7,7 +7,7 @@ import time
 
 @gin.configurable
 class Trainer(object):
-    def __init__(self, model, ds_train, ds_val, ds_info, run_paths, total_steps, log_interval, ckpt_interval):
+    def __init__(self, model, ds_train, ds_val, ds_info, run_paths, total_steps, log_interval, ckpt_interval, classification):
     # def __init__(self, model, ds_train, ds_val, ds_info, run_paths, total_steps, log_interval, ckpt_interval):
 
         self.model = model
@@ -18,6 +18,7 @@ class Trainer(object):
         self.total_steps = total_steps
         self.log_interval = log_interval
         self.ckpt_interval = ckpt_interval
+        self.classification = classification
 
         # Summary Writer
         self.summary_writer = tf.summary.create_file_writer(self.run_paths['path_model_Tensorboard'])
@@ -29,11 +30,19 @@ class Trainer(object):
                                                   max_to_keep=10)
 
         # Loss objective
-        self.loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=False)
+        if self.classification == 'binary':
+            self.loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=False)
+        elif self.classification == 'multiple':
+            self.loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False)
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=5e-5)
 
         # accuracy objective
-        self.accuracy_objective = tf.keras.metrics.BinaryAccuracy()
+        if self.classification == 'binary':
+            self.accuracy_objective = tf.keras.metrics.BinaryAccuracy()
+        elif self.classification == 'multiple':
+            self.accuracy_objective = tf.keras.metrics.SparseCategoricalAccuracy()
+        elif self.classification == 'regression':
+            self.accuracy_objective = tf.keras.metrics.Accuracy()
 
         # Metrics
         self.train_loss = tf.keras.metrics.Mean()
@@ -41,30 +50,32 @@ class Trainer(object):
         self.train_accuracy = tf.keras.metrics.Mean()
         self.val_accuracy = tf.keras.metrics.Mean()
 
-
     @tf.function
     def train_step(self, images, labels):
         with tf.GradientTape() as tape:
-            # training=True is only needed if there are layers with different
-            # behavior during training versus inference (e.g. Dropout).
             predictions = self.model(images, training=True)
-            train_loss = self.loss_object(labels, predictions)
+            if self.classification == 'multiple' or self.classification == 'binary':
+                train_loss = self.loss_object(labels, predictions)
+            elif self.classification == 'regression':
+                train_loss = tf.keras.losses.MSE(labels, predictions)
         gradients = tape.gradient(train_loss, self.model.trainable_variables)
         self.optimizer.apply_gradients(zip(gradients, self.model.trainable_variables))
         train_accuracy = self.accuracy_objective(labels, predictions)
         return train_loss, train_accuracy
-
 
     @tf.function
     def val_step(self, images, labels):
         # training=False is only needed if there are layers with different
         # behavior during training versus inference (e.g. Dropout).
         predictions = self.model(images, training=True)
-        val_loss = self.loss_object(labels, predictions)
+        if self.classification == 'multiple' or self.classification == 'binary':
+            val_loss = self.loss_object(labels, predictions)
+        elif self.classification == 'regression':
+            val_loss = tf.keras.losses.MSE(labels, predictions)
         val_accuracy = self.accuracy_objective(labels, predictions)
         return val_loss, val_accuracy
 
-
+    # @tf.function
     def train(self, epochs, batch_size=32):
         logging.info(f'{self.ds_train}')
         logging.info('Starting')
@@ -90,7 +101,7 @@ class Trainer(object):
                 train_accuracy_list.append(accuracy_value)
 
             for val_images, val_labels in self.ds_val:
-                labels = tf.reshape(labels, (-1, 1))
+                val_labels = tf.reshape(val_labels, (-1, 1))
                 val_loss_list = []
                 val_accuracy_list = []
                 loss_value, accuracy_value = self.val_step(val_images, val_labels)
@@ -116,7 +127,8 @@ class Trainer(object):
             self.val_accuracy.update_state(val_accuracy_list)
             val_accuracy = self.val_accuracy.result()
 
-            template = 'epoch {}, Loss: {}, Accuracy: {}%, Validation Loss: {}, Validation Accuracy: {}%, Time taken: {}'
+            template = 'epoch {}, Loss: {}, Accuracy: {}%, ' \
+                       'Validation Loss: {}, Validation Accuracy: {}%, Time taken: {}'
             logging.info(template.format(epoch + 1,
                                          train_loss,
                                          train_accuracy * 100,
@@ -127,15 +139,14 @@ class Trainer(object):
                          )
 
             # Write summary to tensorboard
-            tf.summary.trace_on(graph=True, profiler=True)
+            tf.summary.trace_on(graph=True, profiler=False)
             with self.summary_writer.as_default():
                 tf.summary.scalar("train_loss", train_loss, epoch+1)
                 tf.summary.scalar("train_accuracy", self.train_accuracy.result() * 100, epoch+1)
                 tf.summary.scalar("val_loss", self.val_loss.result(), epoch+1)
                 tf.summary.scalar("val_accuracy", self.val_accuracy.result() * 100, epoch+1)
-                # tf.summary.trace_export(name="model_trace",
-                #                         step=0,
-                #                         profiler_outdir=self.run_paths['path_model_Tensorboard'])
+                tf.summary.trace_export(name="Default", step=0,
+                                        profiler_outdir=self.run_paths['path_model_Tensorboard'])
 
             # Reset train metrics
             self.train_loss.reset_states()

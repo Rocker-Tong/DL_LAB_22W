@@ -14,14 +14,18 @@ Trainer.ckpt_interval = 1
 
 # Input pipeline
 #load.name = 'mnist'
-#load.data_dir = '/home/data/IDRID_dataset'
+load.name = 'IDRID'
+#load.data_dir = '/home/data/tensorflow_datasets'
 #preprocess.img_height = 28
 #preprocess.img_width = 28
 prepare.buffer_size = 256
 prepare.batch_size = 16
 prepare.caching = False
-load.name = 'IDRID'
-# load.data_dir = "/Users/rocker/Desktop/Uni Stuttgart/DL Lab/dataset/IDRID_dataset"
-load.data_dir = "/Users/yinzheming/Desktop/Deep_Learning/Lab/IDRID_dataset"
-# evaluate.path = "/Users/rocker/Desktop/Uni Stuttgart/DL Lab/dataset/IDRID_dataset"
-evaluate.path = "/Users/yinzheming/Desktop/Deep_Learning/Lab/IDRID_dataset"
+# load.name = 'eyepacs'
+load.data_dir = "/Users/rocker/Desktop/Uni Stuttgart/DL Lab/dataset/IDRID_dataset"
+# load.data_dir = "/Users/yinzheming/Desktop/Deep_Learning/Lab/IDRID_dataset"
+evaluate.path = "/Users/rocker/Desktop/Uni Stuttgart/DL Lab/dataset/IDRID_dataset"
+# evaluate.path = "/Users/yinzheming/Desktop/Deep_Learning/Lab/IDRID_dataset"
+
+# Classification, binary or multiple
+# main.classification = binary

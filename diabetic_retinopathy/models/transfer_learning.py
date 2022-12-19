@@ -4,7 +4,7 @@ import os
 import tensorflow as tf
 
 
-def inception_resnet_v2(img_size=(256, 256, 3)):
+def inception_resnet_v2(classification, img_size=(256, 256, 3)):
     inputs = tf.keras.Input(shape=img_size)
     preprocess_inputs = tf.keras.applications.inception_resnet_v2.preprocess_input
     # rescale = tf.keras.layers.Rescaling(1./127.5, offset=-1)
@@ -15,7 +15,12 @@ def inception_resnet_v2(img_size=(256, 256, 3)):
     activation = tf.keras.layers.Activation(activation='linear', name='last_conv')
     global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
     dense_1_layer = tf.keras.layers.Dense(8)
-    prediction_layer = tf.keras.layers.Dense(1, activation='sigmoid', name='last_output')
+    if classification == 'binary':
+        prediction_layer = tf.keras.layers.Dense(1, activation='sigmoid', name='last_output')
+    elif classification == 'multiple':
+        prediction_layer = tf.keras.layers.Dense(5, activation='softmax', name='last_output')
+    elif classification == 'regression':
+        prediction_layer = tf.keras.layers.Dense(1, activation='linear', name='last_output')
     # sigmoid_prediction = tf.keras.layers.ReLU()
 
     x = preprocess_inputs(inputs)
@@ -31,7 +36,7 @@ def inception_resnet_v2(img_size=(256, 256, 3)):
     return model
 
 
-def mobilenet(img_size=(256, 256, 3)):
+def mobilenet(classification, img_size=(256, 256, 3)):
     inputs = tf.keras.Input(shape=img_size)
     preprocess_inputs = tf.keras.applications.mobilenet.preprocess_input
     rescale = tf.keras.layers.Rescaling(1./127.5, offset=-1)
@@ -42,7 +47,12 @@ def mobilenet(img_size=(256, 256, 3)):
     activation = tf.keras.layers.Activation(activation='linear', name='last_conv')
     global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
     dense_1_layer = tf.keras.layers.Dense(8)
-    prediction_layer = tf.keras.layers.Dense(1, activation='sigmoid', name='last_output')
+    if classification == 'binary':
+        prediction_layer = tf.keras.layers.Dense(1, activation='sigmoid', name='last_output')
+    elif classification == 'multiple':
+        prediction_layer = tf.keras.layers.Dense(5, activation='softmax', name='last_output')
+    elif classification == 'regression':
+        prediction_layer = tf.keras.layers.Dense(1, activation='linear', name='last_output')
     # sigmoid_prediction = tf.keras.layers.ReLU()
 
     x = preprocess_inputs(inputs)

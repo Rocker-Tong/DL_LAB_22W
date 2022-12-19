@@ -12,7 +12,7 @@ import cv2
 
 # Read labels
 @gin.configurable
-def read_labels(data_dir, dataset):
+def read_labels(data_dir, dataset, classification):
     if dataset == "train":
         files = pd.read_csv(data_dir + "/labels/train.csv")
         files.dropna(inplace=True, axis='columns')
@@ -32,67 +32,87 @@ def read_labels(data_dir, dataset):
         files = pd.read_csv(data_dir + "/labels/test.csv")
         files.dropna(inplace=True, axis='columns')
         test_files_with_labels = files['Retinopathy grade'].values.tolist()
-        for i in range(len(test_files_with_labels)):
-            if test_files_with_labels[i] <= 1:
-                test_files_with_labels[i] = 0
-            else:
-                test_files_with_labels[i] = 1
+        if classification == 'binary':
+            for i in range(len(test_files_with_labels)):
+                if test_files_with_labels[i] <= 1:
+                    test_files_with_labels[i] = 0
+                else:
+                    test_files_with_labels[i] = 1
         return test_files_with_labels
 
     else:
         print("Please choose a train or test set.")
 
-
-def resampling(data_dir, dataset):
+@gin.configurable
+def resampling(data_dir, dataset, classification):
     train_dir = data_dir + "/images/train/"
     filenames = [train_dir + filename for filename in os.listdir(train_dir)]
-    filenames.sort(key=lambda x: int(x[-7:-4]))
-    train_files_with_labels = read_labels(data_dir, dataset)
+    filenames.sort(key=lambda x: x[-7:-4])
+    if len(filenames) == 684:
+        filenames.pop()
+    train_files_with_labels = read_labels(data_dir, dataset, classification)
     label_3_num = 1
     label_4_num = 1
     i = 0
-    # fold_new = data_dir + "/images/train_resampling/"
-    fold_new = "~/train_resampling/"
+    fold_new = "tfrecord/train_resampling/"
+    # fold_new = "~/train_resampling/"
     if os.path.exists(fold_new):
         shutil.rmtree(fold_new)
     os.makedirs(fold_new)
-    for filename in filenames:
-        if train_files_with_labels[i] == 3 and label_3_num <= 10:
-            to_image(filename=filename, path=fold_new)
-            to_csv(list=train_files_with_labels, label=3, i=i)
-            i += 7
-            label_3_num += 1
+    if classification == 'multiple' or classification == 'regression':
+        for filename in filenames:
+            if train_files_with_labels[i] == 3 and label_3_num <= 10:
+                to_image(filename=filename, path=fold_new)
+                to_csv(list=train_files_with_labels, label=3, i=i)
+                i += 7
+                label_3_num += 1
 
-        elif train_files_with_labels[i] == 4 and label_4_num <= 15:
-            to_image(filename=filename, path=fold_new)
-            to_csv(list=train_files_with_labels, label=4, i=i)
-            i += 7
-            label_4_num += 1
+            elif train_files_with_labels[i] == 4 and label_4_num <= 15:
+                to_image(filename=filename, path=fold_new)
+                to_csv(list=train_files_with_labels, label=4, i=i)
+                i += 7
+                label_4_num += 1
 
-        elif train_files_with_labels[i] == 1:
-            to_image(filename=filename, path=fold_new)
-            to_csv(list=train_files_with_labels, label=1, i=i)
-            i += 7
+            elif train_files_with_labels[i] == 1:
+                to_image(filename=filename, path=fold_new)
+                to_csv(list=train_files_with_labels, label=1, i=i)
+                i += 7
 
-        elif train_files_with_labels[i] == 0 or train_files_with_labels[i] == 2:
-            file_name_with_jpg = filename.split("train/", 1)[1]
-            file_name_without_jpg = file_name_with_jpg.split(".jpg", 1)[0]
-            filename_new = fold_new + file_name_without_jpg + "0.jpg"
-            shutil.copy(filename, filename_new)
-            i += 1
+            elif train_files_with_labels[i] == 0 or train_files_with_labels[i] == 2:
+                file_name_with_jpg = filename.split("train/", 1)[1]
+                file_name_without_jpg = file_name_with_jpg.split(".jpg", 1)[0]
+                filename_new = fold_new + file_name_without_jpg + "0.jpg"
+                shutil.copy(filename, filename_new)
+                i += 1
 
-        else:
-            file_name_with_jpg = filename.split("train/", 1)[1]
-            file_name_without_jpg = file_name_with_jpg.split(".jpg", 1)[0]
-            filename_new = fold_new + file_name_without_jpg + "0.jpg"
-            shutil.copy(filename, filename_new)
-            i += 1
+            else:
+                file_name_with_jpg = filename.split("train/", 1)[1]
+                file_name_without_jpg = file_name_with_jpg.split(".jpg", 1)[0]
+                filename_new = fold_new + file_name_without_jpg + "0.jpg"
+                shutil.copy(filename, filename_new)
+                i += 1
 
-    for i in range(len(train_files_with_labels)):
-        if train_files_with_labels[i] <= 1:
-            train_files_with_labels[i] = 0
-        else:
-            train_files_with_labels[i] = 1
+
+
+    elif classification == 'binary':
+        for filename in filenames:
+            if train_files_with_labels[i] == 1:
+                to_image(filename=filename, path=fold_new)
+                to_csv(list=train_files_with_labels, label=1, i=i)
+                i += 7
+            else:
+                file_name_with_jpg = filename.split("train/", 1)[1]
+                file_name_without_jpg = file_name_with_jpg.split(".jpg", 1)[0]
+                filename_new = fold_new + file_name_without_jpg + "0.jpg"
+                shutil.copy(filename, filename_new)
+                i += 1
+        print(train_files_with_labels)
+        for i in range(len(train_files_with_labels)):
+            if train_files_with_labels[i] <= 1:
+                train_files_with_labels[i] = 0
+            else:
+                train_files_with_labels[i] = 1
+
     logging.info('The training dataset is resampled.')
 
     return train_files_with_labels
@@ -102,25 +122,25 @@ def resampling(data_dir, dataset):
 # Read images and define a path for tfrecord file
 def prepare_images(data_dir, dataset):
     if dataset == "train":
-        # train_dir = data_dir + "/images/train_resampling/"
+        train_dir = "tfrecord/train_resampling/"
 
-        train_dir = "~/train_resampling/"
+        # train_dir = "~/train_resampling/"
 
         # train_dir = data_dir + "/images/train/" # without resampling
-        # path = data_dir + "/train.tfrecords"
+        path = "tfrecord/train.tfrecords"
 
-        path = "~/train.tfrecords"
+        # path = "~/train.tfrecords"
 
         filenames = [train_dir + filename for filename in os.listdir(train_dir)]
-        # filenames.sort(key=lambda x: int(x[-7:-4])) # without resampling
-        filenames.sort(key=lambda x: int(x[-8:-4]))
+        # filenames.sort(key=lambda x: int(x.split('.')[0][-3:])) # without resampling
+        filenames.sort(key=lambda x: x[-8:-4])
         return path, filenames
 
     elif dataset == "test":
         test_dir = data_dir + "/images/test/"
-        # path = data_dir + "/test.tfrecords"
+        path = "tfrecord/test.tfrecords"
 
-        path = "~/test.tfrecords"
+        # path = "~/test.tfrecords"
 
         filenames = [test_dir + filename for filename in os.listdir(test_dir)]
         filenames.sort(key=lambda x: int(x[-7:-4]))
@@ -151,7 +171,7 @@ def histogram(data, data_dir):
 def _bytes_feature(value):
     """Returns a bytes_list from a string / byte."""
     if isinstance(value, type(tf.constant(0))):
-        value = value.numpy() # BytesList won't unpack a string from an EagerTensor.
+        value = value.numpy()  # BytesList won't unpack a string from an EagerTensor.
     return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
 
 
@@ -186,20 +206,20 @@ def write_tfrecord(filenames, labels, path):
 
 
 @gin.configurable
-def creating_action(data_dir):
+def creating_action(data_dir, classification):
     # Read labels
-    train_labels = resampling(data_dir, "train")
+    train_labels = resampling(data_dir, "train", classification)
     # train_labels = read_labels(data_dir, "train") # without resampling
     print(len(train_labels))
-    test_labels = read_labels(data_dir, "test")
+    test_labels = read_labels(data_dir, "test", classification)
 
     # Read images
     train_tfrecord_file, train_filenames = prepare_images(data_dir, "train")
     print(len(train_filenames))
     test_tfrecord_file, test_filenames = prepare_images(data_dir, "test")
-    # val_tfrecord_file = data_dir + "/val.tfrecords"
+    val_tfrecord_file = "tfrecord/val.tfrecords"
 
-    val_tfrecord_file = "~/val.tfrecords"
+    # val_tfrecord_file = "~/val.tfrecords"
 
     # Split validation set
     train_filenames, val_filenames, train_labels, val_labels \

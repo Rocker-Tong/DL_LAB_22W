@@ -11,7 +11,7 @@ from input_pipeline.TFRecord import histogram
 
 
 @gin.configurable
-def load(name, data_dir):
+def load(name, data_dir, classification):
     if name == "IDRID":
         logging.info(f"Preparing dataset {name}...")
         if os.path.exists(data_dir + '/train.tfrecords')\
@@ -23,7 +23,7 @@ def load(name, data_dir):
             logging.info('The TFRecord files are existed')
         else:
             logging.info('The TFRecord files are not existed, creating new files...')
-            train_file, test_file, val_file = tfr.creating_action(data_dir)
+            train_file, test_file, val_file = tfr.creating_action(data_dir, classification)
 
         ds_info = {
             'image': tf.io.FixedLenFeature([], tf.string),
@@ -62,24 +62,25 @@ def load(name, data_dir):
 
     elif name == "eyepacs":
         logging.info(f"Preparing dataset {name}...")
-        (ds_train, ds_val, ds_test), ds_info = tfds.load(
-            'diabetic_retinopathy_detection/btgraham-300',
-            split=['train', 'validation', 'test'],
-            shuffle_files=True,
-            with_info=True,
-            data_dir=data_dir
-        )
+
+        train_files, val_files, test_files = get_eyepacs_tfrecord(data_dir)
+        ds_train = tf.data.TFRecordDataset(train_files)
+        ds_val = tf.data.TFRecordDataset(val_files)
+        ds_test = tf.data.TFRecordDataset(test_files)
+
+        ds_info = {
+            'image': tf.io.FixedLenFeature([], tf.string),
+            'label': tf.io.FixedLenFeature([], tf.int64),
+            'name': tf.io.FixedLenFeature([], tf.string),
+        }
 
         def _preprocess(img_label_dict):
-            images = []
-            labels = []
-            csv = pd.read_csv(r"/Users/yinzheming/Desktop/Deep_Learning/Lab/IDRID_dataset/labels/train.csv", header=0)
-            for index in csv.index:
-                image = str(csv.loc[index].values[0])
-                label = int(csv.loc[index].value[1])
-                images.append(image)
-                labels.append(label)
-            return img_label_dict[images], img_label_dict[labels]
+            temp = tf.io.parse_single_example(img_label_dict, ds_info)
+            img_raw = tf.io.decode_jpeg(temp['image'], channels=3)
+            image = tf.image.resize(img_raw, (300, 300))
+            image = tf.image.resize(image, size=(288, 288))
+            label = temp['label']
+            return image, label
 
         ds_train = ds_train.map(_preprocess, num_parallel_calls=tf.data.experimental.AUTOTUNE)
         ds_val = ds_val.map(_preprocess, num_parallel_calls=tf.data.experimental.AUTOTUNE)
@@ -102,6 +103,35 @@ def load(name, data_dir):
 
     else:
         raise ValueError
+
+
+@gin.configurable
+def get_eyepacs_tfrecord(data_dir):
+    """Read in the name lists of TFRecord file of EyePACS dataset
+
+    Parameters:
+        data_dir (string): original path directory where the data is stored
+
+    Returns:
+        train_files (list): name list of TFRecord file of training set
+        val_files (list): name list of TFRecord file of validation set
+        test_files (list): name list of TFRecord file of test set
+    """
+
+    train_files = []
+    val_files = []
+    test_files = []
+    for file in os.listdir(data_dir + '/diabetic_retinopathy_detection/btgraham-300/3.0.0/'):
+        if file.find('train') != -1:
+            train_files.append([data_dir + '/diabetic_retinopathy_detection/btgraham-300/3.0.0/' + file])
+        elif file.find('validation') != -1:
+            val_files.append([data_dir + '/diabetic_retinopathy_detection/btgraham-300/3.0.0/' + file])
+        elif file.find('test') != -1:
+            test_files.append([data_dir + '/diabetic_retinopathy_detection/btgraham-300/3.0.0/' + file])
+        else:
+            continue
+    return train_files, val_files, test_files
+
 
 @gin.configurable
 def prepare(ds_train, ds_val, ds_test, ds_info, buffer_size=256, batch_size=16, caching=False):

@@ -3,7 +3,7 @@ from keras import layers, models, regularizers
 
 class VGG16(models.Model):
 
-    def __init__(self):
+    def __init__(self, classification):
         super(VGG16, self).__init__()
 
         weight_decay = 0.0001
@@ -84,7 +84,12 @@ class VGG16(models.Model):
         model.add(layers.BatchNormalization())
 
         model.add(layers.Dropout(0.5))
-        model.add(layers.Dense(1, kernel_regularizer=regularizers.l2(weight_decay), activation='sigmoid'))
+        if classification == 'binary':
+            model.add(layers.Dense(1, kernel_regularizer=regularizers.l2(weight_decay), activation='sigmoid'))
+        elif classification == 'multiple':
+            model.add(layers.Dense(5, kernel_regularizer=regularizers.l2(weight_decay), activation='softmax'))
+        elif classification == 'regression':
+            model.add(layers.Dense(1, activation='linear'))
 
         self.model = model
 
