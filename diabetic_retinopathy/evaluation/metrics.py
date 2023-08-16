@@ -1,16 +1,27 @@
 import sklearn.metrics
 import tensorflow as tf
 import seaborn as sns
-from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
+from sklearn.metrics import roc_auc_score, roc_curve
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score
 from itertools import cycle
 from scipy import interp
 
 
 class ConfusionMatrix(object):
+    # Metrics of evaluation
     def __init__(self, original_prediction, y_pred, y_true, classification):
+
+        '''
+        Combine confusion matrix, roc curve and so on
+        Args:
+            original_prediction: the original probability of each label
+            y_pred: list of predicted labels
+            y_true: list of the ground truth
+            classification: type of classification
+        '''
+
         # initialize parameters
         # self.num_class = num_class
         self.y_pred = y_pred
@@ -32,11 +43,30 @@ class ConfusionMatrix(object):
         print(stats_text)
 
     def confusion_matrix_show(self, y_true, y_pred):
+
+        '''
+        Calculate the confusion matrix
+        Args:
+            y_true: list of ground truth
+            y_pred: list of predicted labels
+        Return:
+            the confusion matrix
+        '''
+
         cm = confusion_matrix(y_true=y_true, y_pred=y_pred)
         print(cm)
         return cm
 
     def accuracy_for_binary_classification(self, cm):
+
+        '''
+        Calculate the metrics using confusion matrix for binary classification
+        Args:
+            cm: confusion matrix
+        Return:
+            all the results of metrics
+        '''
+
         accuracy = np.trace(cm) / float(np.sum(cm))
         precision = cm[1, 1] / sum(cm[1, :])
         recall = cm[1, 1] / sum(cm[1, :])
@@ -46,6 +76,16 @@ class ConfusionMatrix(object):
         return accuracy, precision, recall, f1_score, sensitivity, specificity
 
     def accuracy_for_multiple_classifications(self, y_true, y_pred):
+
+        '''
+        Calculate the metrics using confusion matrix for multiple classification
+        Args:
+            y_true: list of ground truth
+            y_pred: list of predicted labels
+        Return:
+            all the metrics suitable for multiple classification
+        '''
+
         precision = precision_score(y_true, y_pred, average='macro')
         recall = recall_score(y_true, y_pred, average='macro')
         if self.classification == 'binary':
@@ -56,6 +96,13 @@ class ConfusionMatrix(object):
         return accuracy, precision, recall, f1_score
 
     def confusion_matrix_plot(self, cm):
+
+        '''
+        Plot the image of confusion matrix
+        Args:
+            cm: confusion matrix
+        '''
+
         plt.figure(dpi=120)
         group_counts = ["\n{0:0.0f}\n".format(value) for value in cm.flatten()]
         group_percentages = ["{0:.2%}".format(value) for value in cm.flatten() / np.sum(cm)]
@@ -73,6 +120,14 @@ class ConfusionMatrix(object):
         plt.show()
 
     def roc_curve_plot(self, y_true, y_pred):
+
+        '''
+        Plot the image of ROC curve
+        Args:
+            y_true: list of ground truth
+            y_pred: list of predicted labels
+        '''
+
         # auc = roc_auc_score(y_test,clf.decision_function(X_test))
         if self.classification == 'binary':
             auc = roc_auc_score(y_true, y_pred)
@@ -88,13 +143,14 @@ class ConfusionMatrix(object):
             plt.show()
 
         elif self.classification == 'multiple':
-            # Compute ROC curve and ROC area for each class
+            # Define the number of class
             indices = y_true
             depth = 5
+            # Convert ground truth into one hot coding
             y_true_one_hot_coding = tf.one_hot(indices, depth, on_value=1, off_value=0, axis=-1)
             original_pred = self.original_prediction
             n_classes = 5
-            # 计算每一类的ROC
+            # Calculate ROC curve for each class
             fpr = dict()
             tpr = dict()
             roc_auc = dict()
@@ -102,15 +158,11 @@ class ConfusionMatrix(object):
                 fpr[i], tpr[i], _ = roc_curve(y_true_one_hot_coding[:, i], original_pred[:, i])
                 roc_auc[i] = sklearn.metrics.auc(fpr[i], tpr[i])
 
-            # Compute micro-average ROC curve and ROC area（方法二）
-            # fpr["micro"], tpr["micro"], _ = roc_curve(y_true_one_hot_coding.ravel(), original_pred.ravel())
-            # roc_auc["micro"] = sklearn.metrics.auc(fpr["micro"], tpr["micro"])
-
-            # Compute macro-average ROC curve and ROC area（方法一）
-            # First aggregate all false positive rates
+            # Compute macro-average ROC curve and ROC area
+            # Aggregate all false positive rates
             all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
 
-            # Then interpolate all ROC curves at this points
+            # Interpolate all ROC curves at this points
             mean_tpr = np.zeros_like(all_fpr)
             for i in range(n_classes):
                 mean_tpr += interp(all_fpr, fpr[i], tpr[i])
@@ -124,10 +176,6 @@ class ConfusionMatrix(object):
             # Plot all ROC curves
             lw = 2
             plt.figure()
-            # plt.plot(fpr["micro"], tpr["micro"],
-            #          label='micro-average ROC curve (area = {0:0.2f})'
-            #                ''.format(roc_auc["micro"]),
-            #          color='deeppink', linestyle=':', linewidth=4)
 
             plt.plot(fpr["macro"], tpr["macro"],
                      label='macro-average ROC curve (area = {0:0.2f})'

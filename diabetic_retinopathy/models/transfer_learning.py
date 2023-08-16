@@ -2,67 +2,69 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import tensorflow as tf
+from models.layers import *
 
 
-def inception_resnet_v2(classification, img_size=(256, 256, 3)):
+@gin.configurable
+def inception_resnet_v2(classification, fine_tune_at, img_size):
+    '''
+    Inception-resnet-v2 using transfer learning
+    Args:
+        classification: type of classification
+        fine_tune_at: the number of freezing layers
+        img_size: the size of input images
+    Return:
+        keras model object
+    '''
+
+    # Set the input
     inputs = tf.keras.Input(shape=img_size)
+    # output = tf.keras.layers.experimental.preprocessing.Rescaling(1. / 127.5, offset=-1)(inputs)
+    # Build the model with transfer learning
     preprocess_inputs = tf.keras.applications.inception_resnet_v2.preprocess_input
-    # rescale = tf.keras.layers.Rescaling(1./127.5, offset=-1)
+    #rescale = tf.keras.layers.Rescaling(1./127.5, offset=-1)
     base_model = tf.keras.applications.InceptionResNetV2(input_shape=img_size, include_top=False, weights='imagenet')
-    fine_tune_at = 100
+    # Freezing the layers before fine_tune_at
     for layer in base_model.layers[:fine_tune_at]:
         layer.trainable = False
     activation = tf.keras.layers.Activation(activation='linear', name='last_conv')
-    global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
-    dense_1_layer = tf.keras.layers.Dense(8)
-    if classification == 'binary':
-        prediction_layer = tf.keras.layers.Dense(1, activation='sigmoid', name='last_output')
-    elif classification == 'multiple':
-        prediction_layer = tf.keras.layers.Dense(5, activation='softmax', name='last_output')
-    elif classification == 'regression':
-        prediction_layer = tf.keras.layers.Dense(1, activation='linear', name='last_output')
-    # sigmoid_prediction = tf.keras.layers.ReLU()
 
     x = preprocess_inputs(inputs)
     # x = rescale(x)
     x = base_model(x)
     x = activation(x)
-    x = global_average_layer(x)
-    x = tf.keras.layers.Dropout(0.5)(x)
-    x = dense_1_layer(x)
-    outputs = prediction_layer(x)
-    # outputs = sigmoid_prediction(x)
-    model = tf.keras.Model(inputs, outputs)
-    return model
+    output = output_block(x, classification=classification)
+
+    return tf.keras.Model(inputs=inputs, outputs=output, name='inception_resnet_v2')
 
 
-def mobilenet(classification, img_size=(256, 256, 3)):
+@gin.configurable
+def mobilenet(classification, fine_tune_at, img_size):
+    '''
+    Mobilenet using transfer learning
+    Args:
+        classification: type of classification
+        fine_tune_at: the number of freezing layers
+        img_size: the size of input images
+    Return:
+        keras model object
+    '''
+
+    # Set the input
     inputs = tf.keras.Input(shape=img_size)
+    # Build the model with transfer learning
     preprocess_inputs = tf.keras.applications.mobilenet.preprocess_input
-    rescale = tf.keras.layers.Rescaling(1./127.5, offset=-1)
+    # rescale = tf.keras.layers.Rescaling(1./127.5, offset=-1)
     base_model = tf.keras.applications.MobileNet(input_shape=img_size, include_top=False, weights='imagenet')
-    fine_tune_at = 100
+    # Freezing the layers before fine_tune_at
     for layer in base_model.layers[:fine_tune_at]:
         layer.trainable = False
     activation = tf.keras.layers.Activation(activation='linear', name='last_conv')
-    global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
-    dense_1_layer = tf.keras.layers.Dense(8)
-    if classification == 'binary':
-        prediction_layer = tf.keras.layers.Dense(1, activation='sigmoid', name='last_output')
-    elif classification == 'multiple':
-        prediction_layer = tf.keras.layers.Dense(5, activation='softmax', name='last_output')
-    elif classification == 'regression':
-        prediction_layer = tf.keras.layers.Dense(1, activation='linear', name='last_output')
-    # sigmoid_prediction = tf.keras.layers.ReLU()
 
     x = preprocess_inputs(inputs)
-    x = rescale(x)
+    # x = rescale(x)
     x = base_model(x)
     x = activation(x)
-    x = global_average_layer(x)
-    x = tf.keras.layers.Dropout(0.5)(x)
-    x = dense_1_layer(x)
-    outputs = prediction_layer(x)
-    # outputs = sigmoid_prediction(x)
-    model = tf.keras.Model(inputs, outputs)
-    return model
+    output = output_block(x, classification=classification)
+
+    return tf.keras.Model(inputs=inputs, outputs=output, name='mobilenet')

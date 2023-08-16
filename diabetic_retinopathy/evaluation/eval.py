@@ -5,15 +5,22 @@ from evaluation.metrics import ConfusionMatrix
 from evaluation.make_new_folder import make_folder
 import numpy as np
 from evaluation.Grad_CAM import deep_visualize
+# from evaluation.dimension_reduction import dimensional_reduction
 
 
 @gin.configurable
 def evaluate(model, ds_test, path, classification):
-    """evaluate performance of the model"""
+    """evaluate performance of the model
+    Args:
+        model: model which will be evaluated
+        ds_test: test set
+        path: the path to make folder for saving visualization images
+        classification: binary or multiple classification type
+    """
 
     # load the checkpoint
-    checkpoint = tf.train.Checkpoint(step=tf.Variable(1), model=model, optimizer=tf.keras.optimizers.Adam())
-    checkpoint_manager = tf.train.CheckpointManager(checkpoint, "/Users/yinzheming/dl-lab-22w-team06/experiments/run_2022-12-18T16-17-07-859044/ckpts", max_to_keep=10)
+    checkpoint = tf.train.Checkpoint(model=model)
+    checkpoint_manager = tf.train.CheckpointManager(checkpoint, directory="/Users/yinzheming/Desktop/Deep_Learning/Lab/experiments/VGG_binary/run_2023-02-09T22-25-54-084553/ckpts", max_to_keep=10)
     # checkpoint.restore(tf.train.latest_checkpoint(run_paths["path_ckpts_train"]))
     checkpoint.restore(checkpoint_manager.latest_checkpoint)
 
@@ -30,7 +37,7 @@ def evaluate(model, ds_test, path, classification):
 
     if classification == 'binary':
         y_pred_origin = model.predict(ds_test)
-        y_pred = np.where(y_pred_origin > 0.5, 1, 0)
+        y_pred = np.where(y_pred_origin > 0.3, 1, 0)
         y_pred = np.ndarray.tolist(y_pred)
         y_pred = [x[0] for x in y_pred]
         print(y_pred)
@@ -51,6 +58,8 @@ def evaluate(model, ds_test, path, classification):
         print(y_pred)
         print(len(y_pred))
 
+    # Predict the test set using the label
+
     # Get the true label list of test set
     y_true = []
     for idx, (test_images, test_labels) in enumerate(ds_test):
@@ -60,6 +69,7 @@ def evaluate(model, ds_test, path, classification):
     print(y_true)
     print(len(y_true))
 
+    print(y_pred_origin)
     if classification == 'binary' or classification == 'multiple':
         # Plot Confusion Matrix
         ConfusionMatrix(y_pred_origin, y_pred, y_true, classification)
@@ -68,8 +78,11 @@ def evaluate(model, ds_test, path, classification):
         make_folder(path)
 
         # Deep Visualization
-        for idx, (test_image, test_label) in enumerate(ds_test):
-            deep_visualize(model=model, images=test_image, dataset=ds_test, step=idx, run_paths=path, classification=classification)
+        # for idx, (test_image, test_label) in enumerate(ds_test):
+        #     deep_visualize(model=model, images=test_image, dataset=ds_test, step=idx, run_paths=path, classification=classification)
+
+        # Dimensional reduction
+        # dimensional_reduction(model=model, dataset=ds_test, labels=y_true)
 
     elif classification == 'regression':
         mse = tf.keras.losses.mean_squared_error(y_true, y_pred)

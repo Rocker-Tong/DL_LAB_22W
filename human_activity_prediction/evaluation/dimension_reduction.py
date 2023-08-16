@@ -19,7 +19,7 @@ def dimensional_reduction(model, dataset, labels):
     """
 
     # get the model
-    umap_model = tf.keras.models.Model([model.inputs], [model.get_layer('last_conv').output])
+    umap_model = tf.keras.models.Model([model.inputs], [model.get_layer('lstm').output])   # get the model
     for idx, (image, label) in enumerate(dataset):
         if idx == 0:
             values = umap_model(image)

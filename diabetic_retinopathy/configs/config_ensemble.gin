@@ -2,14 +2,9 @@
 # ==============================================================================
 CLASSIFICATION = "binary"
 
-
-# Training
+# Ensemble learning
 # ==============================================================================
-Trainer.total_steps = 1e5
-Trainer.log_interval = 1
-Trainer.ckpt_interval = 1
-Trainer.learning_rate = 0.00005
-Trainer.classification = %CLASSIFICATION
+ensemble_learning.classification = %CLASSIFICATION
 
 # Input pipeline
 # ==============================================================================
@@ -17,16 +12,11 @@ load.name = 'IDRID'
 load.data_dir = '/home/data/IDRID_dataset'
 load.classification = %CLASSIFICATION
 prepare.buffer_size = 256
-prepare.batch_size = 32
-deep_visualize.batch_size = 32
+prepare.batch_size = 16
 prepare.caching = False
 # load.name = 'eyepacs'
-# load.data_dir = '/home/data/tensorflow_datasets'
-
-# Evaluation
-# ==============================================================================
-evaluate.path = "/home/RUS_CIP/st174258/dl-lab-22w-team06"
-evaluate.classification = %CLASSIFICATION
+# load.data_dir = "/Users/rocker/Desktop/Uni Stuttgart/DL Lab/dataset/IDRID_dataset"
+# load.data_dir = "/Users/yinzheming/Desktop/Deep_Learning/Lab/IDRID_dataset"
 
 # Layers
 # ==============================================================================
@@ -35,8 +25,8 @@ output_block.dropout_rate = 0.3
 
 # Architecture
 # ==============================================================================
-CNN.neuron_list = [4, 8, 16, 32]
-CNN.number_of_layer = [1, 1, 1, 1]
+CNN.neuron_list = [16, 32]
+CNN.number_of_layer = [2, 2]
 CNN.kernel_size = 3
 CNN.stride = 1
 CNN.pool_size = 2
@@ -44,11 +34,11 @@ CNN.img_size = (256, 256, 3)
 CNN.classification = %CLASSIFICATION
 
 VGG.img_size = (256, 256, 3)
-VGG.neuron_list = [64, 128, 256, 512]
-VGG.number_of_layer = [3, 3, 3, 3]
+VGG.neuron_list = [16, 32, 48, 64]
+VGG.number_of_layer = [2, 2, 3, 3]
 VGG.dropout_rate = 0.3
-VGG.kernel_size = 3
-VGG.pool_size = 2
+VGG.kernel_size = (3, 3)
+VGG.pool_size = (2, 2)
 VGG.classification = %CLASSIFICATION
 
 ResNet101.img_size = (256, 256, 3)

@@ -8,6 +8,6 @@
 
 # Activate everything you need
 module load cuda/11.2
-export WANDB_API_KEY=13e00845eff410a8834dd4c8f1650c4d23a469f2
+export WANDB_API_KEY=94a2bd29b83d7c325f6b06587474e39f855f79f8
 # Run your python code
 python3 main.py

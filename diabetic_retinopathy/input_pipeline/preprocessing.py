@@ -2,6 +2,8 @@ import gin
 import tensorflow as tf
 import shutil
 import os
+import tensorflow_addons as tfa
+import numpy as np
 
 
 def crop_margin(img):
@@ -38,7 +40,15 @@ def crop_margin(img):
 
 
 def to_image(filename, path):
-    for i in range(0, 7, 1):
+
+    '''
+    Copy the images to do oversampling
+    Args:
+        filename: the complete path of the image which will be copied
+        path: the new folder to save new images
+    '''
+
+    for i in range(0, 8, 1):
         file_name_with_jpg = filename.split("train/", 1)[1]
         file_name_without_jpg = file_name_with_jpg.split(".jpg", 1)[0]
         filename_new = path + file_name_without_jpg + str(i) + ".jpg"
@@ -47,14 +57,31 @@ def to_image(filename, path):
 
 
 def to_csv(list, label, i):
-    for j in range(6):
+
+    '''
+    Insert the corresponding labels of the copied images
+    Args:
+        list: list of the true labels
+        label: the label of the copied image
+        i: the position of the label in list
+    :return:
+    '''
+
+    for j in range(7):
         list.insert(i+j, label)
     return
 
 
 @gin.configurable
 def preprocess(image):
-    """Dataset preprocessing: Normalizing and resizing"""
+
+    '''
+    Dataset preprocessing: Normalizing and resizing
+    Args:
+        image: the image which will be preprocessed
+    Return:
+        preprocessed image
+    '''
 
     # Normalize image: `uint8` -> `float32`.
     tf.cast(image, tf.float32)
@@ -65,39 +92,25 @@ def preprocess(image):
         image,
         [[-280/2848, 290/4288, 3128/2848, 3698/4288]],
         box_indices=[0],
-        crop_size=(256, 256),)
+        crop_size=(256, 256))
     image = tf.squeeze(image)
 
     return image
 
 
-def augment(dataset):
-    """Data augmentation"""
-    dataset_augmented_1 = dataset.map(
-        lambda image, label: (tf.image. random_contrast(image, lower=0.1, upper=1.0), label)
-    )
-    dataset_augmented_2 = dataset.map(
-        lambda image, label: (tf.image.flip_left_right(image), label)
-    )
-    dataset_augmented_3 = dataset.map(
-        lambda image, label: (tf.image.flip_up_down(image), label)
-    )
-    dataset_augmented_4 = dataset.map(
-        lambda image, label: (tf.image.random_brightness(image, 0.2), label)
-    )
-    dataset_augmented_5 = dataset.map(
-        lambda image, label: (tf.image.rot90(image), label)
-    )
-    combined_dataset = dataset.concatenate(dataset_augmented_1).concatenate(dataset_augmented_2)\
-        .concatenate(dataset_augmented_3).concatenate(dataset_augmented_4).concatenate(dataset_augmented_5).shuffle(buffer_size=32)
-    return combined_dataset
+def augment(image):
 
-    # image = tf.image.rot90(image)
-    # image = tf.image.random_flip_left_right(image)
-    # image = tf.image.random_flip_up_down(image)
-    # # image = tf.image.resize_with_crop_or_pad(image, 128, 128)
-    # # image = tf.image.random_crop(image, [128, 128, 3])
-    # # image = tf.keras.preprocessing.image.random_shear(image, 60, channel_axis=3)
-    # image = tf.image.random_brightness(image, max_delta=0.5)
-    # image = tf.image.random_contrast(image, 0.2, 0.5)
-    # return image, label
+    '''
+    Data Augmentation
+    Args:
+        image: the image which will be augmented
+    Return:
+        the augmented image
+    '''
+
+    image = tf.image.random_contrast(image, lower=0.1, upper=1.0)
+    image = tf.image.flip_left_right(image)
+    image = tf.image.flip_up_down(image)
+    image = tf.image.random_brightness(image, 0.2)
+    image = tfa.image.rotate(image, tf.random.uniform(shape=(1,), maxval=180, minval=0, dtype=np.float32))
+    return image
